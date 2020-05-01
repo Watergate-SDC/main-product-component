@@ -1,0 +1,41 @@
+DROP DATABASE IF EXISTS lululemon;
+CREATE DATABASE lululemon;
+USE lululemon;
+
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    sex VARCHAR(10) NOT NULL,
+    xsmall VARCHAR(10) NOT NULL,
+    small VARCHAR(10) NOT NULL,
+    medium VARCHAR(10) NOT NULL,
+    large VARCHAR(10) NOT NULL,
+    xlarge VARCHAR(10) NOT NULL,
+    xxlarge VARCHAR(10) NOT NULL,
+    zero VARCHAR(10) NOT NULL,
+    two VARCHAR(10) NOT NULL,
+    four VARCHAR(10) NOT NULL,
+    six VARCHAR(10) NOT NULL,
+    eight VARCHAR(10) NOT NULL,
+    ten VARCHAR(10) NOT NULL,
+    twelve VARCHAR(10) NOT NULL,
+    price DECIMAL NOT NULL, 
+    reviews INT(10) NOT NULL,
+    design VARCHAR(80) NOT NULL,
+    fabric VARCHAR(80) NOT NULL,
+    fit VARCHAR(80) NOT NULL,
+    features VARCHAR(80) NOT NULL,
+    color1 VARCHAR(80) NOT NULL, 
+    color2 VARCHAR(80) NOT NULL,
+    type VARCHAR(55) NOT NULL,
+    img1 VARCHAR(255) NOT NULL,
+    img2 VARCHAR(255) NOT NULL,
+    img3 VARCHAR(255) NOT NULL,
+    img4 VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE cart (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    subtotal DECIMAL NOT NULL,
+    items INT(20) NOT NULL
+);
