@@ -1,14 +1,15 @@
 {
   "name": "main-product-component",
   "version": "1.0.0",
-  "description": "a repo for the main product display",
+  "description": "a clone of Lululemon product viewer module for educational purposes",
   "main": "./server/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --config ./jest.config.json",
+    "test:watch": "npm run test -- --watch",
     "start": "nodemon ./server/index.js",
-    "build": "webpack --watch"
+    "build": "webpack -d --watch",
+    "seed": "node database/seed.js"
   },
-  "repository": "git+https://github.com/JJACD/main-product-component.git",
   "author": "Anna Dinh",
   "license": "ISC",
   "dependencies": {
@@ -20,6 +21,7 @@
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.3",
+    "pure-react-carousel": "^1.27.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
@@ -27,8 +29,19 @@
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-react": "^7.9.4",
+    "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
+    "chai": "^4.2.0",
+    "css-loader": "^3.5.3",
+    "enzyme": "^3.11.0",
+    "jest": "^26.0.1",
+    "react-test-renderer": "^16.13.1",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
-  }
+  },
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
 }

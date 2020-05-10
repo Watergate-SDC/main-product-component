@@ -1,0 +1,774 @@
+.arrows {
+    background: hsla(0,0%,100%,.75);
+    display: block;
+    border-radius: .25rem;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    cursor: pointer;
+}
+.left-arrow, .right-arrow {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    opacity: 1;
+    outline: none;
+    position: absolute;
+    visibility: visible;
+    z-index: 10;
+    top: 45%
+}
+.right-arrow {
+    right: 1rem;
+    border-radius: 20%;
+}
+
+.left-arrow {
+    left: 1rem;
+    border-radius: 20%;
+}
+
+div {
+    display: block;
+}
+.main {
+    display: block;
+    min-height: 100vh;
+}
+
+.pdp {
+    margin-top: 1.25rem;
+}
+
+.pdp-wrapper-container {
+    margin-top: 0;
+    transition: 1s ease-in;
+    padding-right: .625rem;
+    padding-left: .625rem;
+}
+.main-content-container {
+    margin-right: auto;
+    margin-left: auto;
+    box-sizing: border-box;
+    max-width: 85.75rem;
+    position: relative;
+    margin: 0 auto;
+}
+
+.pdp-components-wrapper{
+    margin-bottom: 3.75rem;
+    min-height: 50.625rem;
+    position: relative;
+    z-index: 3;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    /* margin-right: -.3125rem;
+    margin-left: -.3125rem; */
+}
+
+.carousel-images-box-1 {
+    align-self: flex-end;
+    /* flex: 1; */
+    width: 610px;
+    /* max-width: 573.49px; */
+    cursor: grab;
+    bottom: auto;
+    position: sticky;
+    height: 50.625rem;
+    padding-right: 12.5px;
+}
+
+.product-information-box-2 {
+    /* flex: 1; */
+    
+}
+
+.product-image-1, .product-image-2 {
+    width: 100%;
+}
+
+.pdp-carousel-images-wrapper-content {
+    transition: all .3s ease;
+    height: 810px;
+}
+
+.product-image-carousel {
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    z-index: 10;
+    max-height: 810px;
+}
+
+.swiper-container-horizontal {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    height: 810px;
+} 
+
+.carousel__slider-tray {
+    position: relative;
+    width: 100%;
+    height: 810px;
+    display: flex;
+}
+
+.carousel__slider--horizontal {
+    height: 810px;
+    width: 610px;
+}
+
+#carousel__slide {
+    display: flex;
+    list-style: none;
+    max-width: 100%;
+    position: relative;
+    max-height: 810px;
+    width: 610px;
+}
+
+.carousel__inner-slide {
+    line-height: 0;
+}
+
+.product-image-1 {
+    object-fit: cover;
+}
+
+.dots {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    bottom: 6rem;
+    left: 0;
+    /* width: 100%; */
+    transition: .3s;
+    text-align: center;
+}
+
+.carousel__dot {
+    margin: 0 5px;
+    background-color: #8c8c8c;
+    max-height: .5rem;
+    position: relative;
+    max-width: .5rem;
+    cursor: pointer;
+    opacity: 0.3;
+    display: inline-block;
+    border-radius: 100%;
+    border-color: none;
+}
+
+.carousel__dot--selected {
+    opacity: 1;
+}
+
+#dot {
+    height: 8px;
+    width: 8px;
+    max-width: 8px;
+}
+
+.pdp-summary-offset {
+   box-sizing: content-box;
+   padding-left: 12.5px;
+   padding-right: 12.5px;
+}
+
+.pdp-summary-wrapper {
+    box-sizing: content-box;
+    padding-left: 2.25rem;
+    width: 425px;
+}
+
+.pdp-summary-wrapper .breadcrumbs {
+    margin: 1.2125rem 0 1.2125rem;
+    position: static;
+}
+
+.breadcrumbs {   
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    position: absolute;
+    /* top: -30px; */
+}
+.breadcrumb--item-info {
+    border-bottom: 1px solid #d5d5d5;
+    padding-bottom: .1875rem;
+    color: #000;
+    display: inline-block;
+    text-decoration: none;
+    font-family: 'Calibre Medium';
+}
+.breadcrumb--item-info:hover, .purchase-attributes__size-guide-link:hover, .reviews-link__count:hover, .lll-link-primary:hover {
+    cursor: pointer;
+    /* text-decoration: underline; */
+    border-bottom: 1px solid #d31334;
+}
+
+li {
+    display: list-item;
+    text-align: left;
+}
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    list-style-type: disc;
+    padding: 0;
+}
+
+.breadcrumbs, .breadcrumb {
+    font-size: .875rem;
+    font-weight: 500;
+    line-height: 1.3125rem;
+    text-transform: capitalize;
+}
+
+.breadcrumb:after {
+    content: "/";
+    color: #cfd2d5;
+    display: inline-block;
+    font-weight: 300;
+    margin: 0 8px;
+}
+.product-description {
+    display: block;
+    transition: all 2s;
+}
+
+.pdp-product-description-wrapper {
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.product-description .pdp-title {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    font-family: 'Calibre Semibold';
+    font-size: 36px;
+    line-height: 2rem;
+    margin-bottom: 0;
+    
+} 
+h1 {
+    font-weight: 600;
+    margin: 0 auto 1.875rem;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}
+.pillSecondary {
+    background-color: #fff;
+    border-color: #e6e6e6;
+    color: #000;
+}
+.pill-new-box {
+    font-size: .875rem;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.42857;
+    letter-spacing: .075rem;
+    text-transform: uppercase;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: .25rem;
+    border-style: solid;
+    border-width: .0625rem;
+    display: inline-flex;
+    height: 1.625rem;
+    padding: 0 .4375rem 0 .5rem;
+    font-family: 'Calibre Medium';
+}
+.pdp-product-price {
+    display: block;
+    margin-bottom: 1rem;
+    text-align: left;
+    font-family: 'Calibre Light';
+    font-size: 21px;
+    line-height: 25px;
+}
+.currency-code {
+    letter-spacing: .08125rem;
+    line-height: 17px;
+    font-family: 'Calibre Medium';
+    font-size: 14px;
+}
+.purchase-attributes__selections {
+    position: relative;
+}
+.purchase-attributes__color-details {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+    font-size: .875rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+.purchase-attributes__color-details__name {
+    text-transform: capitalize;
+    margin: 0;
+    font-family: 'Calibre Regular';
+}
+p {
+    display: block;
+    font-size: 17px;
+    line-height: 20px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+.purchase-attributes__color-selector {
+    display: block;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.swatches-container {
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row wrap;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+}
+.swatches-container .swatch {
+    cursor: pointer;
+    margin: 0 .9rem .75rem 0;
+}
+.colorSwatch {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    height: 2.25rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    line-height: 0;
+    position: relative;
+    width: 2.25rem;
+}
+.colorSwatch:before {
+    pointer-events: none;
+}
+.swatch .is-active:before {
+    border: .0625rem solid #000;
+    border-radius: 50%;
+    box-shadow: 0 0 0.03125rem 0.03125rem #000;
+    box-sizing: border-box;
+    content: "";
+    height: 2.875rem;
+    left: -.3125rem;
+    position: absolute;
+    top: -.3125rem;
+    width: 2.875rem;
+}
+
+.colorSwatchImage {
+    border-radius: 50%;
+    box-shadow: 0 0 0.03125rem 0.09375rem #d5d5d5;
+    height: 2.125rem;
+    width: 2.125rem;
+}
+.purchase-attributes__notification {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all .3s ease 0s;
+}
+.size-selector {
+    display: block;
+    margin-bottom: 1rem;
+}
+.purchase-attribute-carousel-counter {
+    -webkit-box-align: end;
+    align-items: flex-end;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.purchase-attribute-carousel-counter__label {
+    display: flex;
+    font-size: 1.1875rem;
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Calibre Semibold';
+}
+.buttonTileGroupWrapper {
+    margin: 0 -.3125rem -1rem;
+    display: inline-flex;
+    -webkit-box-flex: unset;
+    flex: unset;
+    flex-wrap: unset;
+    width: 100%;
+}
+.buttonTile {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+    outline: none;
+    margin-left: .375rem;
+    margin-right: .375rem;
+}
+.size-selector__button-tile {
+    outline: none;
+}
+.buttonTile .is-active{
+    background: #000;
+    color: #fff;
+}
+.buttonTile .not-active:hover {
+    border: 2px solid black;
+}
+.sizeTile {
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: .25rem;
+    border: .0625rem solid #d5d5d5;
+    box-shadow: 0 0 0 0.03125rem #d5d5d5;
+    color: #000;
+    display: inline-flex;
+    font-size: 1.1875rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    height: 2.25rem;
+    -webkit-box-pack: center;
+    justify-content: center;
+    line-height: 0;
+    min-width: 2.25rem;
+    padding: 0 .53125rem;
+    font-family: 'Calibre Semibold';
+}
+.purchase-attributes__size-meta {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: flex;
+    font-size: 1.0625rem;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    line-height: 1.25rem;
+    margin-top: 1rem;
+}
+.purchase-attributes__size-meta .purchase-attributes__model-info {
+    font-size: 1.0625rem;
+    padding-bottom: 0;
+    padding-right: .75rem;
+    padding-top: 0;
+}
+.purchase-attributes__model-info {
+    font-size: 1rem;
+    line-height: 21px;
+    padding-bottom: .9375rem;
+    padding-top: .625rem;
+    font-family: 'Calibre Regular';
+}
+.purchase-attributes__size-guide-link {
+    font-family: 'Calibre Medium';
+    line-height: 17px;
+    margin-left: auto;
+    text-transform: capitalize;
+    white-space: nowrap;
+    border-bottom: .0625rem solid #d5d5d5;
+    color: currentColor;
+    cursor: pointer;
+    display: inline-block;
+    line-height: inherit;
+    padding-bottom: .25rem;
+    text-decoration: none;
+}
+.purchase-method__buttons {
+    background: #fff;
+    border: .0625rem solid #e6e6e6;
+    border-radius: .25rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0.625rem 0rem 0.5rem;
+}
+.add-to-bag {
+    width: 100%;
+    background-color: #d31334;
+    border-color: #d31334;
+    color: #fff;
+    border: .0625rem solid;
+    border-radius: .25rem;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: .09375rem;
+    line-height: 1.15;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Calibre Bold';
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-style: normal;
+}
+.free-shipping-and-free-returns {
+    text-align: center;
+    font-family: 'Calibre Regular';
+}
+.lll-text-body-1 {
+    margin: 8px 0;
+    font-size: 17px;
+    line-height: 30px;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+}
+.customer-engagement-extensions {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+.customer-engagement-extensions__button {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: flex;
+    font-size: 1.0625rem;
+    font-family: 'Calibre Medium';
+    line-height: 1;
+    padding: 0;
+}
+.customer-engagement-extensions .icon {
+    margin-right: .5rem;
+}
+.lll-link-primary {
+    border-bottom: .0625rem solid #d5d5d5;
+    color: currentColor;
+    cursor: pointer;
+    display: inline-block;
+    line-height: inherit;
+    padding-bottom: .25rem;
+    text-decoration: none;
+    font-family: 'Calibre Medium';
+}
+.customer-engagement-extensions .lll-link-primary {
+    margin-top: .3125rem;
+}
+.customer-engagement-extensions__button {
+    -webkit-box-align: start;
+    align-items: flex-start;
+    display: -webkit-box;
+    display: flex;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1;
+    padding: 0;
+    visibility: visible;
+}
+.product-education-accordion-links__details{
+    font-size: 1.1875rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    margin: .5rem 0;
+    font-family: 'Calibre Medium';
+}
+.designed-for {
+    -webkit-box-align: center;
+    align-items: center;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-flow: row nowrap;
+    min-height: 1.625rem;
+}
+.designed-for:not(:last-child) {
+    margin-bottom: .625rem;
+}
+.designed-for__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+.designed-for__activity-text {
+    margin-left: .3125rem;
+    margin-right: .3125rem;
+    color: #000;
+    cursor: default;
+    display: inline-block;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+.status {
+    font-size: .875rem;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.42857;
+    font-weight: 600;
+    letter-spacing: .075rem;
+    text-transform: uppercase;
+    -webkit-box-align: center;
+    align-items: center;
+    border-radius: .25rem;
+    border-style: solid;
+    border-width: .0625rem;
+    display: inline-flex;
+    height: 1.625rem;
+    padding: 0 .4375rem 0 .5rem;
+} 
+body, button, input, select, textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.2;
+}
+body, html {
+    background-color: #fafafa;
+    color: #000;
+    margin: 0;
+    min-height: 100%;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Calibre Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Regular'), url('./calibre-cufonfonts-webfont/CalibreRegular.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Regular Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Regular Italic'), url('./calibre-cufonfonts-webfont/CalibreRegularItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Thin'), url('./calibre-cufonfonts-webfont/CalibreThin.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Thin Italic'), url('./calibre-cufonfonts-webfont/CalibreThinItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Light'), url('./calibre-cufonfonts-webfont/CalibreLight.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Light Italic'), url('./calibre-cufonfonts-webfont/CalibreLightItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Medium'), url('./calibre-cufonfonts-webfont/CalibreMedium.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Medium Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Medium Italic'), url('./calibre-cufonfonts-webfont/CalibreMediumItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Semibold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Semibold'), url('./calibre-cufonfonts-webfont/CalibreSemibold.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Semibold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Semibold Italic'), url('./calibre-cufonfonts-webfont/CalibreSemiboldItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Bold'), url('./calibre-cufonfonts-webfont/CalibreBold.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Bold Italic'), url('./calibre-cufonfonts-webfont/CalibreBoldItalic.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Black'), url('./calibre-cufonfonts-webfont/CalibreBlack.woff') format('woff');
+    }
+    
+    
+    @font-face {
+    font-family: 'Calibre Black Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Calibre Black Italic'), url('./calibre-cufonfonts-webfont/CalibreBlackItalic.woff') format('woff');
+    } 
+
+html {
+    font-family: 'Calibre', 'Helvetica Neue' ,Helvetica, Roboto ,Arial, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
