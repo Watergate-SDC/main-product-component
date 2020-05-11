@@ -6,7 +6,7 @@ CREATE TABLE products (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     sex VARCHAR(10) NOT NULL,
-    price DECIMAL NOT NULL, 
+    price INT NOT NULL, 
     reviews INT(10) NOT NULL,
     design VARCHAR(80) NOT NULL,
     fabric VARCHAR(80) NOT NULL,
