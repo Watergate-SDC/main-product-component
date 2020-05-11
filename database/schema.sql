@@ -24,6 +24,5 @@ CREATE TABLE products (
 
 CREATE TABLE cart (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    subtotal DECIMAL NOT NULL,
-    items INT(20) NOT NULL
+    price INT NOT NULL
 );
