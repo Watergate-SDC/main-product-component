@@ -5,25 +5,13 @@ class RenderProductInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            currentColor: '', // color name chosen
-            color1: '', // changes if diff color is chosen
-            color2: '',
+            currentColor: this.props.product.color1, // color name chosen
+            color1: true, // changes if diff color is chosen
+            color2: false,
             currentSize: ''
         }
         this.handleNewColorInfo = this.handleNewColorInfo.bind(this);
-        this.setInitialState = this.setInitialState.bind(this);
         this.handleSizeClick = this.handleSizeClick.bind(this);
-    }
-
-    componentDidMount() {
-        this.setInitialState()
-    }
-
-    setInitialState() {
-        this.setState({
-            color1: true,
-            color2: false
-        })
     }
 
     renderSizes() {
@@ -32,25 +20,25 @@ class RenderProductInfo extends React.Component {
                 <div className="pdp-size-selector-button-tile-group" role="radiogroup">
                     <div className="buttonTileGroupWrapper">
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('zero')} className={`${this.state.currentSize === 'zero' ? 'is-active' : 'not-active'} sizeTile`}>0</span>
+                            <span onClick={() => this.handleSizeClick(0)} className={`${this.state.currentSize === 0 ? 'is-active' : 'not-active'} sizeTile`}>0</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('two')} className={`${this.state.currentSize === 'two' ? 'is-active' : 'not-active'} sizeTile`}>2</span>
+                            <span onClick={() => this.handleSizeClick(2)} className={`${this.state.currentSize === 2 ? 'is-active' : 'not-active'} sizeTile`}>2</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('four')} className={`${this.state.currentSize === 'four' ? 'is-active' : 'not-active'} sizeTile`}>4</span>
+                            <span onClick={() => this.handleSizeClick(4)} className={`${this.state.currentSize === 4 ? 'is-active' : 'not-active'} sizeTile`}>4</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('six')} className={`${this.state.currentSize === 'six' ? 'is-active' : 'not-active'} sizeTile`}>6</span>
+                            <span onClick={() => this.handleSizeClick(6)} className={`${this.state.currentSize === 6 ? 'is-active' : 'not-active'} sizeTile`}>6</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('eight')} className={`${this.state.currentSize === 'eight' ? 'is-active' : 'not-active'} sizeTile`}>8</span>
+                            <span onClick={() => this.handleSizeClick(8)} className={`${this.state.currentSize === 8 ? 'is-active' : 'not-active'} sizeTile`}>8</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('ten')} className={`${this.state.currentSize === 'ten' ? 'is-active' : 'not-active'} sizeTile`}>10</span>
+                            <span onClick={() => this.handleSizeClick(10)} className={`${this.state.currentSize === 10 ? 'is-active' : 'not-active'} sizeTile`}>10</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('twelve')} className={`${this.state.currentSize === 'twelve' ? 'is-active' : 'not-active'} sizeTile`}>12</span>
+                            <span onClick={() => this.handleSizeClick(12)} className={`${this.state.currentSize === 12 ? 'is-active' : 'not-active'} sizeTile`}>12</span>
                         </div>
                     </div>
                 </div>
@@ -60,22 +48,22 @@ class RenderProductInfo extends React.Component {
                 <div className="pdp-size-selector-button-tile-group" role="radiogroup">
                     <div className="buttonTileGroupWrapper">
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('xsmall')} className={`${this.state.currentSize === 'xsmall' ? 'is-active' : 'not-active'} sizeTile`}>XS</span>
+                            <span onClick={() => this.handleSizeClick('XS')} className={`${this.state.currentSize === 'XS' ? 'is-active' : 'not-active'} sizeTile`}>XS</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('small')} className={`${this.state.currentSize === 'small' ? 'is-active' : 'not-active'} sizeTile`}>S</span>
+                            <span onClick={() => this.handleSizeClick('S')} className={`${this.state.currentSize === 'S' ? 'is-active' : 'not-active'} sizeTile`}>S</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('medium')} className={`${this.state.currentSize === 'medium' ? 'is-active' : 'not-active'} sizeTile`}>M</span>
+                            <span onClick={() => this.handleSizeClick('M')} className={`${this.state.currentSize === 'M' ? 'is-active' : 'not-active'} sizeTile`}>M</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('large')} className={`${this.state.currentSize === 'large' ? 'is-active' : 'not-active'} sizeTile`}>L</span>
+                            <span onClick={() => this.handleSizeClick('L')} className={`${this.state.currentSize === 'L' ? 'is-active' : 'not-active'} sizeTile`}>L</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('xlarge')} className={`${this.state.currentSize === 'xlarge' ? 'is-active' : 'not-active'} sizeTile`}>XL</span>
+                            <span onClick={() => this.handleSizeClick('XL')} className={`${this.state.currentSize === 'XL' ? 'is-active' : 'not-active'} sizeTile`}>XL</span>
                         </div>
                         <div role="radio" className="buttonTile size-selector__button-tile">
-                            <span onClick={() => this.handleSizeClick('xxlarge')} className={`${this.state.currentSize === 'xxlarge' ? 'is-active' : 'not-active'} sizeTile`}>XXL</span>
+                            <span onClick={() => this.handleSizeClick('XXL')} className={`${this.state.currentSize === 'XXL' ? 'is-active' : 'not-active'} sizeTile`}>XXL</span>
                         </div>
                     </div>
                 </div>
@@ -95,7 +83,9 @@ class RenderProductInfo extends React.Component {
 
     handleNewColorInfo(color) {
         if (color === this.state.currentColor) {
-            return
+            this.setState({
+                currentColor: color
+            })
         }
         if (color !== this.state.currentColor) {
             this.setState({
@@ -112,12 +102,12 @@ class RenderProductInfo extends React.Component {
         return (
             <div className="pdp-summary-offset">
                 <div className="pdp-summary-wrapper">
-                    <ul className="breadcrumbs">
-                        <li className="breadcrumb">
-                            <span className="breadcrumb--item-info">{this.props.product.sex} Clothes</span>
+                    <ul className="pdp-breadcrumbs">
+                        <li className="pdp-breadcrumb">
+                            <span className="pdp-breadcrumb--item-info">{this.props.product.sex} Clothes</span>
                         </li>
-                        <li className="breadcrumb">
-                            <span className="breadcrumb--item-info">{this.props.product.type}</span>
+                        <li className="pdp-breadcrumb">
+                            <span className="pdp-breadcrumb--item-info">{this.props.product.type}</span>
                         </li>
                     </ul>
                     <div className="product-description">
@@ -157,7 +147,7 @@ class RenderProductInfo extends React.Component {
                                                 </span>
                                             </div>
                                             <div className="swatch">
-                                                <span onClick={() => { this.handleNewColorInfo(this.props.product.color2) }} className={`${this.state.color2 ? 'is-active' : 'not-active'} colorSwatch`}>
+                                                <span onClick={() => this.handleNewColorInfo(this.props.product.color2) } className={`${this.state.color2 ? 'is-active' : 'not-active'} colorSwatch`}>
                                                     <picture>
                                                         <img alt={this.props.product.color2} className="colorSwatchImage" sizes="34px" src={this.props.product.colorId2} title={this.props.product.color2}></img>
                                                     </picture>
@@ -193,7 +183,7 @@ class RenderProductInfo extends React.Component {
                                 <p className="lll-text-body-1">Free Shipping and Free Returns</p>
                             </div>
                         </div> */}
-                            <AddToBag currentColor={this.state.currentColor} currentSize={this.state.currentSize} product={this.props.product}/>
+                            <AddToBag firstcolor={this.props.firstcolor} currentColor={this.state.currentColor === undefined ? this.props.product.color1 : this.state.currentColor} currentSize={this.state.currentSize} product={this.props.product}/>
                         <div className="customer-engagement-extensions">
                             <button type="button" className="customer-engagement-extensions__button">
                                 <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon reviews-icon" focusable="false">
@@ -244,7 +234,7 @@ class RenderProductInfo extends React.Component {
                                 <button className="designed-for__activity-text lll-link-primary designed-for__activity-text--link" tabIndex="0" type="button">{this.props.product.fabric}</button>
                             </li>
                             <li className="designed-for">
-                                <svg className="designed-for__icon col-1">
+                                <svg className="designed-for__icon">
                                     <title></title>
                                     <use xlinkHref="#icon-icon_size_default">
                                         #shadow-root (closed)
@@ -256,7 +246,7 @@ class RenderProductInfo extends React.Component {
                                 <span className="designed-for__activity-text lll-link-primary">{this.props.product.fit}</span>
                             </li>
                             <li className="designed-for">
-                                <svg className="designed-for__icon col-1">
+                                <svg className="designed-for__icon">
                                     <title></title>
                                     <use xlinkHref="#icon-feature_pockets">
                                         #shadow-root (closed)
