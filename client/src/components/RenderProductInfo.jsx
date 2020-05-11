@@ -1,5 +1,5 @@
 import React from 'react';
-// import AddToBag from './AddToBag';
+import AddToBag from './AddToBag';
 
 class RenderProductInfo extends React.Component {
     constructor(props) {
@@ -148,15 +148,15 @@ class RenderProductInfo extends React.Component {
                                 </div>
                                 <div className="purchase-attributes__color-selector">
                                     <div className="select-swatches">
-                                        <div className="swatches-container" aria-required="true" aria-label="Select colour" aria-activedescendant="0" role="radiogroup">
-                                            <div role="radio" className="swatch available colorSwatch" tabIndex="0" aria-checked="true" aria-label={this.props.product.color1}>
+                                        <div className="swatches-container">
+                                            <div className="swatch available colorSwatch" tabIndex="0" aria-checked="true" aria-label={this.props.product.color1}>
                                                 <span onClick={() => this.handleNewColorInfo(this.props.product.color1)} className={`${this.state.color1 ? 'is-active' : 'not-active'} colorSwatch`}>
                                                     <picture>
                                                         <img alt={this.props.product.color1} className="colorSwatchImage" sizes="34px" src={this.props.product.colorId1} title={this.props.product.color1}></img>
                                                     </picture>
                                                 </span>
                                             </div>
-                                            <div role="radio" tabIndex="-1" aria-checked="false" aria-label={this.props.product.color2} className="swatch">
+                                            <div className="swatch">
                                                 <span onClick={() => { this.handleNewColorInfo(this.props.product.color2) }} className={`${this.state.color2 ? 'is-active' : 'not-active'} colorSwatch`}>
                                                     <picture>
                                                         <img alt={this.props.product.color2} className="colorSwatchImage" sizes="34px" src={this.props.product.colorId2} title={this.props.product.color2}></img>
@@ -187,13 +187,13 @@ class RenderProductInfo extends React.Component {
                                 Size guide
                         </a>
                         </div>
-                        <div className="purchase-method__buttons">
+                        {/* <div className="purchase-method__buttons">
                             <button className="add-to-bag" onClick={this.addToBag} type="button">Add to Bag</button>
                             <div className="free-shipping-and-free-returns">
                                 <p className="lll-text-body-1">Free Shipping and Free Returns</p>
                             </div>
-                        </div>
-                            {/* <AddToBag currentColor={this.state.currentColor} currentSize={this.state.currentSize} product={this.props.product}/> */}
+                        </div> */}
+                            <AddToBag currentColor={this.state.currentColor} currentSize={this.state.currentSize} product={this.props.product}/>
                         <div className="customer-engagement-extensions">
                             <button type="button" className="customer-engagement-extensions__button">
                                 <svg width="24px" height="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="icon reviews-icon" focusable="false">
@@ -232,7 +232,7 @@ class RenderProductInfo extends React.Component {
                                 <button tabIndex="0" className="lll-link-primary designed-for__activity-text" type="button">Designed for {this.props.product.design}</button>
                             </li>
                             <li className="designed-for">
-                                <svg className="designed-for__icon" aria-hidden="true">
+                                <svg className="designed-for__icon" >
                                     <title></title>
                                     <use xlinkHref="#icon-fabric_soft">
                                         #shadow-root (closed)
@@ -244,7 +244,7 @@ class RenderProductInfo extends React.Component {
                                 <button className="designed-for__activity-text lll-link-primary designed-for__activity-text--link" tabIndex="0" type="button">{this.props.product.fabric}</button>
                             </li>
                             <li className="designed-for">
-                                <svg className="designed-for__icon col-1" aria-hidden="true">
+                                <svg className="designed-for__icon col-1">
                                     <title></title>
                                     <use xlinkHref="#icon-icon_size_default">
                                         #shadow-root (closed)
@@ -256,7 +256,7 @@ class RenderProductInfo extends React.Component {
                                 <span className="designed-for__activity-text lll-link-primary">{this.props.product.fit}</span>
                             </li>
                             <li className="designed-for">
-                                <svg className="designed-for__icon col-1" aria-hidden="true">
+                                <svg className="designed-for__icon col-1">
                                     <title></title>
                                     <use xlinkHref="#icon-feature_pockets">
                                         #shadow-root (closed)
