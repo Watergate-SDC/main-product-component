@@ -37,5 +37,11 @@ module.exports = {
         db.query(queryStr, (err, results) => {
             err ? callback(err) : callback(null, results);
         })
+    },
+    deleteCart: (callback) => {
+        let queryStr = `TRUNCATE TABLE cart;`;
+        db.query(queryStr, (err, results) => {
+            err ? callback(err) : callback(null, results);
+        })
     }
 };

@@ -13,7 +13,7 @@ const controller = {
         })
     },
     getCartInfo: (req, res) => {
-        helper.getTotalPrice((err, results) => {
+        helper.getCartInfo((err, results) => {
             err ? res.status(404).send(err) : res.status(200).json(results);
         })
     },
@@ -23,6 +23,11 @@ const controller = {
             err ? res.status(404).send('Unable to add to cart') : res.status(200).send('Product added to cart.');
         })
 
+    },
+    deleteCart: (req, res) => {
+        helper.deleteCart((err, results) => {
+            err ? res.status(404).send('Unable to clear cart') : res.status(200).send('Cart has been cleared');
+        })
     }
 }
 

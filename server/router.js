@@ -2,7 +2,7 @@ const router = require('express').Router();
 const controller = require('./controller.js');
 
 router
-    .route('/products')
+    .route('/')
     // gets all 100 product info
     .get(controller.getAll)
     
@@ -11,14 +11,14 @@ router
     // gets subtotal of cart
     .get(controller.getCartInfo)
     // adds a product to cart
-    .post(controller.addToCart);
+    .post(controller.addToCart)
+    // deletes entire cart
+    .delete(controller.deleteCart);
+
 router
     .route('/:id')
     // gets one product info
     .get(controller.getOne);
     
-
-// add to cart
-// post
 
 module.exports = router;
