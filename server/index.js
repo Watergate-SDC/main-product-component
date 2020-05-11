@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(cors());
 
-app.use('/products', router);
+app.use('/', router);
 app.use(express.static(path.join(__dirname, '/../client/dist')));
 
 app.listen(port, () => {
