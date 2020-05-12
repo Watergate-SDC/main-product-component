@@ -29,9 +29,6 @@
     border-radius: 20%;
 }
 
-div {
-    display: block;
-}
 .main {
     display: block;
     min-height: 100vh;
@@ -46,6 +43,7 @@ div {
     transition: 1s ease-in;
     padding-right: .625rem;
     padding-left: .625rem;
+    justify-content: center;
 }
 .main-content-container {
     margin-right: auto;
@@ -53,7 +51,6 @@ div {
     box-sizing: border-box;
     max-width: 85.75rem;
     position: relative;
-    margin: 0 auto;
 }
 
 .pdp-components-wrapper{
@@ -67,27 +64,18 @@ div {
     flex-direction: row;
     flex-wrap: wrap;
     box-sizing: border-box;
-    /* margin-right: -.3125rem;
-    margin-left: -.3125rem; */
+    justify-content: center;
 }
 
 .carousel-images-box-1 {
-    align-self: flex-end;
-    /* flex: 1; */
     width: 610px;
-    /* max-width: 573.49px; */
     cursor: grab;
-    bottom: auto;
     position: sticky;
     height: 50.625rem;
     padding-right: 12.5px;
+    justify-content: center;
+    margin-top: 10px;
 }
-
-.product-information-box-2 {
-    /* flex: 1; */
-    
-}
-
 .product-image-1, .product-image-2 {
     width: 100%;
 }
@@ -192,19 +180,19 @@ div {
     width: 425px;
 }
 
-.pdp-summary-wrapper .breadcrumbs {
+.pdp-summary-wrapper .pdp-breadcrumbs {
     margin: 1.2125rem 0 1.2125rem;
     position: static;
 }
 
-.breadcrumbs {   
+.pdp-breadcrumbs {   
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     position: absolute;
     /* top: -30px; */
 }
-.breadcrumb--item-info {
+.pdp-breadcrumb--item-info {
     border-bottom: 1px solid #d5d5d5;
     padding-bottom: .1875rem;
     color: #000;
@@ -212,13 +200,13 @@ div {
     text-decoration: none;
     font-family: 'Calibre Medium';
 }
-.breadcrumb--item-info:hover, .purchase-attributes__size-guide-link:hover, .reviews-link__count:hover, .lll-link-primary:hover {
+.pdp-breadcrumb--item-info:hover, .purchase-attributes__size-guide-link:hover, .reviews-link__count:hover, .lll-link-primary:hover {
     cursor: pointer;
     /* text-decoration: underline; */
     border-bottom: 1px solid #d31334;
 }
 
-li {
+li .pdp-breadcrumb{
     display: list-item;
     text-align: left;
 }
@@ -233,14 +221,14 @@ ul {
     padding: 0;
 }
 
-.breadcrumbs, .breadcrumb {
+.pdp-breadcrumbs, .pdp-breadcrumb {
     font-size: .875rem;
     font-weight: 500;
     line-height: 1.3125rem;
     text-transform: capitalize;
 }
 
-.breadcrumb:after {
+.pdp-breadcrumb:after {
     content: "/";
     color: #cfd2d5;
     display: inline-block;
@@ -328,15 +316,6 @@ h1 {
     text-transform: capitalize;
     margin: 0;
     font-family: 'Calibre Regular';
-}
-p {
-    display: block;
-    font-size: 17px;
-    line-height: 20px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
 }
 .purchase-attributes__color-selector {
     display: block;
@@ -505,7 +484,7 @@ p {
     margin-top: 1rem;
     padding: 0.5rem 0.625rem 0rem 0.5rem;
 }
-.add-to-bag {
+#add-to-bag {
     width: 100%;
     background-color: #d31334;
     border-color: #d31334;
@@ -515,7 +494,6 @@ p {
     cursor: pointer;
     display: inline-flex;
     font-size: 1.1875rem;
-    font-weight: 700;
     -webkit-box-pack: center;
     justify-content: center;
     letter-spacing: .09375rem;
@@ -647,13 +625,6 @@ body, button, input, select, textarea {
     font-weight: 400;
     line-height: 1.2;
 }
-body, html {
-    background-color: #fafafa;
-    color: #000;
-    margin: 0;
-    min-height: 100%;
-    padding: 0;
-}
 
 @font-face {
     font-family: 'Calibre Regular';
@@ -766,9 +737,163 @@ body, html {
     src: local('Calibre Black Italic'), url('./calibre-cufonfonts-webfont/CalibreBlackItalic.woff') format('woff');
     } 
 
-html {
-    font-family: 'Calibre', 'Helvetica Neue' ,Helvetica, Roboto ,Arial, sans-serif;
+.modal-inner {
+    margin: 1.25rem .3125rem 0;
+    position: relative;
+    text-align: left;
 }
-* {
+
+.modal-product-info-box{
+    display: flex;
+    flex-wrap: wrap;
+}
+.modal-product-image {
+    flex-grow: 0;
+    flex-shrink: 0;
     box-sizing: border-box;
+    flex-basis: 33.33333%;
+    max-width: 33.33333%;
+    min-height: 1px;
+    line-height: 0;
+}
+.lazy-image-container {
+    min-height: 1px;
+    line-height: 0;
+}
+.product-container--image{
+    height: auto;
+    width: 100%;
+}
+.modal-product-title{
+    font-size: 1.4375rem;
+    font-weight: 600;
+    margin-bottom: .25rem;
+    margin-top: 0;
+}
+.modal-product-info{
+    font-size: 1.0625rem;
+    padding-bottom: 1.5rem;
+}
+.modal-product-info-color{
+    text-transform: capitalize;
+}
+.modal-product-info-price, .modal-product-info-product-flag {
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    display: flex;
+}
+.modal-product-line-separation, .modal-bag-details, .modal-product-info-box{
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+.modal-bag-details {
+    padding: 0;
+}
+.modal-bag{
+    font-size: 1.0625rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.modal-bag-info, .modal-bag-subtotal, .modal-bag-subtotal-value{
+    -webkit-box-flex: 1;
+    flex: 1 1 auto;
+    margin-bottom: 0;
+}
+.modal-bag-info-normal{
+    font-weight: 400;
+    padding-left: .375rem;
+}
+.modal-bag-price{
+    display: flex;
+    -webkit-box-pack: end;
+    justify-content: flex-end;
+    margin-bottom: 0;
+}
+.modal-bag-subtotal{
+    font-size: 1.0625rem;
+    font-weight: 400;
+    margin: 0 .5625rem 0 0;
+    display: inline-block;
+    line-height: 1.2;
+    max-width: none;
+}
+.modal-view-bag-container{
+    margin-top: .975rem;
+    margin: .9375rem 0;
+}
+.modal-view-bag-button{
+    /* border-width: .125rem;
+    border-radius: .25rem; */
+    font-size: 1.1875rem;
+    font-weight: 600;
+    padding: .75rem 1.5rem;
+    border: 2rem solid #000;
+    color: #000;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    width: 100%;
+    background: #fafafa;
+    border: .0625rem solid;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .0875rem;
+    line-height: 1.4;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.modal-view-bag-button:hover {
+    background: black;
+    color: white;
+}
+.modal-checkout-container{
+    margin-top: .875rem;
+    margin: .9375rem 0;
+}
+.modal-checkout-button{
+    border-radius: .25rem;
+    font-size: 1.1875rem;
+    font-weight: 600;
+    padding: .75rem 1.5rem;
+    line-height: 1.25rem;
+    text-align: center;
+    transition: all .5s ease-in-out;
+    display: flex;
+    width: 100%;
+    background-color: #d31334;
+    border-color: #d31334;
+    color: #fff;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: .09375rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.addedtoyourbag, .modal-product-title{
+    font-family: 'Calibre Semibold';
+}
+.Addedtoyourbag{
+    line-height: 33px;
+    size: 30px;
+}
+.modal-product-title {
+    size: 23px;
+    line-height: 28px;
+}
+.modal-product-info-color, .modal-product-info-size, .modal-product-info-price, .modal-product-info-product-flag, .modal-bag-info, .modal-bag-price{
+    font-family: 'Calibre Regular';
+    size: 17px;
+    line-height: 21px;
+}
+.modal-view-bag-button, .checkout-modal {
+    font-family: 'Calibre Semibold';
+    font-size: 19px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 7px
 }
