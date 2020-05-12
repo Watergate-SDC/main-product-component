@@ -28,15 +28,13 @@ class AddToBag extends React.Component {
                                 totalItems: cartInfo.data.totalItems,
                                 subtotal: cartInfo.data.subtotal
                             })
-                            console.log(cartInfo)
-                            console.log(this.state.totalItems, this.state.subtotal)
                         })
                         .catch(err => console.error(err));
                 })
                 .catch(err => console.error(err));
         }
     }
-
+   
     handleModal() {
         this.setState({
             showModal: !this.state.showModal
@@ -48,7 +46,7 @@ class AddToBag extends React.Component {
             <div className="purchase-method__buttons">
                 <ButtonToolbar>
                 <Button variant="primary" id="add-to-bag" onClick={() => {this.addToCart(); this.handleModal()}} >Add to Bag</Button>
-                <CartInfo firstcolor={this.props.firstcolor} currentcolor={this.props.currentColor} currentsize={this.props.currentSize} product={this.props.product} show={this.state.showModal} onHide={this.handleModal} totalItems={this.state.totalItems} subtotal={this.state.subtotal}/> 
+                <CartInfo firstcolor={this.props.firstcolor} currentcolor={this.props.currentColor} currentsize={this.props.currentSize} product={this.props.product} show={this.state.showModal} onHide={this.handleModal} totalitems={this.state.totalItems} subtotal={this.state.subtotal}/> 
                 </ButtonToolbar>
                 <div className="free-shipping-and-free-returns">
                     <p className="lll-text-body-1">Free Shipping and Free Returns</p>
