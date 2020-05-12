@@ -16,11 +16,20 @@ class App extends React.Component {
         }
         this.getOneProduct = this.getOneProduct.bind(this);
         this.handleNewColor = this.handleNewColor.bind(this);
+        this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
     }
 
     componentDidMount() {
         this.getOneProduct();
+        this.deleteCartUponRefresh();
     }
+   
+    deleteCartUponRefresh() {
+        axios
+            .delete('/products/cart')
+            .catch(err => console.error(err));
+    }
+
    
     getOneProduct() {
         axios
@@ -64,7 +73,7 @@ class App extends React.Component {
                 <div className="carousel-images-box-1">
                     <RenderImages currentColors={this.state.currentColors}/>
                 </div>
-                <div className="product-information-box-2">
+                <div >
                     <RenderProductInfo product={this.state.product} currentColor={this.state.currentColor} handleNewColor={this.handleNewColor} firstcolor={this.state.currentColors.image1}/>
                 </div>
                 </div>
