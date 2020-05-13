@@ -26,14 +26,19 @@ class App extends React.Component {
 
   deleteCartUponRefresh() {
     axios
-      .delete('/products/cart')
+      .delete('http://localhost:3000/cart')
       .catch(err => console.error(err));
   }
 
 
   getOneProduct() {
     axios
-      .get(`/products/${Math.floor(Math.random() * 100)}`)
+      .get(`http://localhost:3000/${Math.floor(Math.random() * 100)}`, {
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Content-Type': 'application/json'
+        }
+      })
       .then((item) => {
         this.setState({
           product: item.data[0],
@@ -66,19 +71,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="pdp">
-        <section className="pdp-wrapper-container">
-          <div className="main-content-container">
-            <div className="pdp-components-wrapper">
-              <div className="carousel-images-box-1">
-                <RenderImages currentColors={this.state.currentColors} />
-              </div>
-              <div>
-                <RenderProductInfo product={this.state.product} currentColor={this.state.currentColor} handleNewColor={this.handleNewColor} firstcolor={this.state.currentColors.image1} />
-              </div>
-            </div>
+      <div className="wrapper container-fluid">
+        <div className="row between-md pdp-components-wrapper animated fadeIn">
+          <div className="col-md-6 col-lg-6 odo-carousel0images-offset ">
+            <RenderImages currentColors={this.state.currentColors} />
           </div>
-        </section>
+          <div className="col-md-6 col-lg-5 pdp-summary-offset">
+            <RenderProductInfo product={this.state.product} currentColor={this.state.currentColor} handleNewColor={this.handleNewColor} firstcolor={this.state.currentColors.image1} />
+          </div>
+        </div>
       </div>
     );
   }
