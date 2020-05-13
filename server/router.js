@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const controller = require('./controller.js');
 
-router
-  .route('/')
-  // gets all 100 product info
-  .get(controller.getAll);
+// router
+//   .route('/')
+//   // gets all 100 product info
+//   .get(controller.getAll);
   
 router
   .route('/cart')

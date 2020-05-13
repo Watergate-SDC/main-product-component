@@ -13,9 +13,19 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(morgan('dev'));
 app.use(cors());
 
-app.use('/products', router);
 app.use(express.static(path.join(__dirname, '/../client/dist')));
+
+app.use('/', router);
+
+app.get(('/bundle.js'), (req, res) => {
+  if (err) {
+    console.log(err);
+  } else {
+    res.status(200).sendFile('../client/dist');
+  }
+});
 
 app.listen(port, () => {
   console.log(`listening at http://localhost:${port}`);
 });
+module.exports = app;
