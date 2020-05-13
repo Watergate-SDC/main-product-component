@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import { Table, Button, ButtonToolbar } from 'react-bootstrap';
+import { Button, ButtonToolbar } from 'react-bootstrap';
 import CartInfo from './CartInfo';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
