@@ -27,9 +27,7 @@ class RenderProductInfo extends React.Component {
 
   handleNewColorInfo(color) {
     if (color === this.state.currentColor) {
-      this.setState({
-        currentColor: color
-      });
+      return;
     }
     if (color !== this.state.currentColor) {
       this.setState({

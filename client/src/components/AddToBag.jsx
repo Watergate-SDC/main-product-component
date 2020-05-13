@@ -2,7 +2,6 @@ import React from 'react';
 import Axios from 'axios';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 import CartInfo from './CartInfo';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 class AddToBag extends React.Component {
   constructor(props) {
@@ -57,7 +56,7 @@ class AddToBag extends React.Component {
             product={this.props.product} 
             show={this.state.showModal} 
             onHide={this.handleModal} 
-            totalitems={this.state.totalItems} s
+            totalitems={this.state.totalItems}
             subtotal={this.state.subtotal} />
         </ButtonToolbar>
         <div className='free-shipping-and-free-returns'>
