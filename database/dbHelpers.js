@@ -1,12 +1,12 @@
 const db = require('./index.js');
 
 module.exports = {
-  getAll: (callback) => {
-    let queryStr = 'SELECT * FROM products';
-    db.query(queryStr, (err, results) => {
-      err ? callback(err) : callback(null, results);
-    });
-  },
+  // getAll: (callback) => {
+  //   let queryStr = 'SELECT * FROM products';
+  //   db.query(queryStr, (err, results) => {
+  //     err ? callback(err) : callback(null, results);
+  //   });
+  // },
   getOne: (id, callback) => {
     let queryStr = `SELECT * FROM products WHERE id=${id};`;
     db.query(queryStr, (err, results) => {
@@ -14,7 +14,7 @@ module.exports = {
     });
   },
   getCartInfo: (callback) => {
-    let queryStr = `SELECT * FROM cart;`;
+    let queryStr = 'SELECT * FROM cart;';
     db.query(queryStr, (err, results) => {
       if (err) {
         callback(err);
@@ -39,7 +39,7 @@ module.exports = {
     });
   },
   deleteCart: (callback) => {
-    let queryStr = `TRUNCATE TABLE cart;`;
+    let queryStr = 'TRUNCATE TABLE cart;';
     db.query(queryStr, (err, results) => {
       err ? callback(err) : callback(null, results);
     });
