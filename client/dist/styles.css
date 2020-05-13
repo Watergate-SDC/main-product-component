@@ -1,173 +1,42 @@
-.arrows {
-  background: hsla(0,0%,100%,.75);
-  display: block;
-  border-radius: .25rem;
-  height: 3rem;
-  width: 3rem;
-  border: none;
-  cursor: pointer;
+.carousel-indicators li{
+  margin: 0 5px !important;
+  background-color:black !important;
+  height: .5rem !important;
+  margin: 0 .5rem !important;
+  opacity: .3 !important;
+  position: relative !important;
+  width: .5rem !important;
+  display: inline-block !important;
+  border-radius: 100% !important;
 }
-.left-arrow, .right-arrow {
+.pdp-components-wrapper {
+  justify-content: center !important;
   -webkit-box-align: center;
+  -webkit-box-pack: center;
   align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  opacity: 1;
-  outline: none;
-  position: absolute;
-  visibility: visible;
-  z-index: 10;
-  top: 45%
-}
-.right-arrow {
-  right: 1rem;
-  border-radius: 20%;
-}
-
-.left-arrow {
-  left: 1rem;
-  border-radius: 20%;
-}
-
-.main {
-  display: block;
-  min-height: 100vh;
-}
-
-.pdp {
-  margin-top: 1.25rem;
-}
-
-.pdp-wrapper-container {
-  margin-top: 0;
-  transition: 1s ease-in;
-  padding-right: .625rem;
-  padding-left: .625rem;
   justify-content: center;
 }
-.main-content-container {
-  margin-right: auto;
-  margin-left: auto;
-  box-sizing: border-box;
-  max-width: 85.75rem;
-  position: relative;
-}
-
-.pdp-components-wrapper{
-  margin-bottom: 3.75rem;
-  min-height: 50.625rem;
-  position: relative;
-  z-index: 3;
-  display: flex;
-  -webkit-box-direction: normal;
-  -webkit-box-orient: horizontal;
-  flex-direction: row;
-  flex-wrap: wrap;
-  box-sizing: border-box;
-  justify-content: center;
-}
-
-.carousel-images-box-1 {
-  width: 610px;
-  cursor: grab;
-  position: sticky;
-  height: 50.625rem;
-  padding-right: 12.5px;
-  justify-content: center;
-  margin-top: 10px;
-}
-.product-image-1, .product-image-2 {
-  width: 100%;
-}
-
-.pdp-carousel-images-wrapper-content {
-  transition: all .3s ease;
-  height: 810px;
-}
-
-.product-image-carousel {
-  -webkit-box-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  justify-content: center;
-  z-index: 10;
-  max-height: 810px;
-}
-
-.swiper-container-horizontal {
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  height: 810px;
-} 
-
-.carousel__slider-tray {
-  position: relative;
-  width: 100%;
-  height: 810px;
+.odo-carousel0images-offset {
+  max-width: 674px !important;
+  margin-right: 1px;
+  max-height: 50.625rem !important;
   display: flex;
 }
-
-.carousel__slider--horizontal {
-  height: 810px;
-  width: 610px;
+.carousel-indicators li.active{
+  opacity: .7 !important;
 }
-
-#carousel__slide {
-  display: flex;
-  list-style: none;
-  max-width: 100%;
-  position: relative;
-  max-height: 810px;
-  width: 610px;
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  height: 48px !important;
+  /* opacity: 1 important!; */
+  width: 3.125rem !important;
+  opacity: 1 !important; 
 }
-
-.carousel__inner-slide {
-  line-height: 0;
+.carousel-control-prev-icon{
+  background-image: url(https://lulupics.s3.us-east-2.amazonaws.com/Arrows/Left.jpg) !important;
 }
-
-.product-image-1 {
-  object-fit: cover;
+.carousel-control-next-icon{
+  background-image: url(https://lulupics.s3.us-east-2.amazonaws.com/Arrows/Right.jpg) !important;
 }
-
-.dots {
-  display: flex;
-  -webkit-box-pack: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
-  bottom: 6rem;
-  left: 0;
-  /* width: 100%; */
-  transition: .3s;
-  text-align: center;
-}
-
-.carousel__dot {
-  margin: 0 5px;
-  background-color: #8c8c8c;
-  max-height: .5rem;
-  position: relative;
-  max-width: .5rem;
-  cursor: pointer;
-  opacity: 0.3;
-  display: inline-block;
-  border-radius: 100%;
-  border-color: none;
-}
-
-.carousel__dot--selected {
-  opacity: 1;
-}
-
-#dot {
-  height: 8px;
-  width: 8px;
-  max-width: 8px;
-}
-
 .pdp-summary-offset {
    box-sizing: content-box;
    padding-left: 12.5px;
@@ -200,7 +69,7 @@
   text-decoration: none;
   font-family: 'Calibre Medium';
 }
-.pdp-breadcrumb--item-info:hover, .purchase-attributes__size-guide-link:hover, .reviews-link__count:hover, .lll-link-primary:hover {
+.pdp-breadcrumb--item-info:hover, .purchase-attributes__size-guide-link:hover, .lll-link-primary:hover {
   cursor: pointer;
   /* text-decoration: underline; */
   border-bottom: 1px solid #d31334;
@@ -316,6 +185,8 @@ h1 {
   text-transform: capitalize;
   margin: 0;
   font-family: 'Calibre Regular';
+  font-size: 17px;
+  line-height: 21px;
 }
 .purchase-attributes__color-selector {
   display: block;
@@ -458,10 +329,15 @@ h1 {
 }
 .purchase-attributes__model-info {
   font-size: 1rem;
-  line-height: 21px;
+  line-height: 20px;
+  size: 17px;
   padding-bottom: .9375rem;
   padding-top: .625rem;
   font-family: 'Calibre Regular';
+}
+.purchase-attributes__size-guide-link:hover {
+  text-decoration: none;
+  color: black;
 }
 .purchase-attributes__size-guide-link {
   font-family: 'Calibre Medium';
@@ -475,7 +351,6 @@ h1 {
   display: inline-block;
   line-height: inherit;
   padding-bottom: .25rem;
-  text-decoration: none;
 }
 .purchase-method__buttons {
   background: #fff;
@@ -558,7 +433,6 @@ button {
 .customer-engagement-extensions__button {
   -webkit-box-align: start;
   align-items: flex-start;
-  display: -webkit-box;
   display: flex;
   font-size: 1.0625rem;
   font-weight: 500;
@@ -618,124 +492,37 @@ button {
   height: 1.625rem;
   padding: 0 .4375rem 0 .5rem;
 } 
-/* body, button, input, select, textarea {
-  font-family: inherit;
-  font-size: 1rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.2;
-} */
 
 @font-face {
   font-family: 'Calibre Regular';
   font-style: normal;
   font-weight: normal;
-  src: local('Calibre Regular'), url('./calibre-cufonfonts-webfont/CalibreRegular.woff') format('woff');
+  src: url(https://lulupics.s3.us-east-2.amazonaws.com/Calibre/CalibreMedium.woff) format('woff');
   }
-  
-  
   @font-face {
-  font-family: 'Calibre Regular Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Regular Italic'), url('./calibre-cufonfonts-webfont/CalibreRegularItalic.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Thin';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Thin'), url('./calibre-cufonfonts-webfont/CalibreThin.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Thin Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Thin Italic'), url('./calibre-cufonfonts-webfont/CalibreThinItalic.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Light';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Light'), url('./calibre-cufonfonts-webfont/CalibreLight.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Light Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Light Italic'), url('./calibre-cufonfonts-webfont/CalibreLightItalic.woff') format('woff');
-  }
-  
-  
+    font-family: 'Calibre Light';
+    font-style: normal;
+    font-weight: normal;
+    src: url(https://lulupics.s3.us-east-2.amazonaws.com/Calibre/CalibreLight.woff) format('woff');
+    }
   @font-face {
   font-family: 'Calibre Medium';
   font-style: normal;
   font-weight: normal;
-  src: local('Calibre Medium'), url('./calibre-cufonfonts-webfont/CalibreMedium.woff') format('woff');
+  src: url(https://lulupics.s3.us-east-2.amazonaws.com/Calibre/CalibreMedium.woff) format('woff');
   }
-  
-  
-  @font-face {
-  font-family: 'Calibre Medium Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Medium Italic'), url('./calibre-cufonfonts-webfont/CalibreMediumItalic.woff') format('woff');
-  }
-  
-  
   @font-face {
   font-family: 'Calibre Semibold';
   font-style: normal;
   font-weight: normal;
-  src: local('Calibre Semibold'), url('./calibre-cufonfonts-webfont/CalibreSemibold.woff') format('woff');
+  src: url(https://lulupics.s3.us-east-2.amazonaws.com/Calibre/CalibreSemibold.woff) format('woff');
   }
-  
-  
-  @font-face {
-  font-family: 'Calibre Semibold Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Semibold Italic'), url('./calibre-cufonfonts-webfont/CalibreSemiboldItalic.woff') format('woff');
-  }
-  
-  
   @font-face {
   font-family: 'Calibre Bold';
   font-style: normal;
   font-weight: normal;
-  src: local('Calibre Bold'), url('./calibre-cufonfonts-webfont/CalibreBold.woff') format('woff');
+  src: url(https://lulupics.s3.us-east-2.amazonaws.com/Calibre/CalibreBold.woff) format('woff');
   }
-  
-  
-  @font-face {
-  font-family: 'Calibre Bold Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Bold Italic'), url('./calibre-cufonfonts-webfont/CalibreBoldItalic.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Black';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Black'), url('./calibre-cufonfonts-webfont/CalibreBlack.woff') format('woff');
-  }
-  
-  
-  @font-face {
-  font-family: 'Calibre Black Italic';
-  font-style: normal;
-  font-weight: normal;
-  src: local('Calibre Black Italic'), url('./calibre-cufonfonts-webfont/CalibreBlackItalic.woff') format('woff');
-  } 
 
 .modal-inner {
   margin: 1.25rem .3125rem 0;
@@ -826,8 +613,6 @@ button {
   margin: .9375rem 0;
 }
 .modal-view-bag-button{
-  /* border-width: .125rem;
-  border-radius: .25rem; */
   font-size: 1.1875rem;
   font-weight: 600;
   padding: .75rem 1.5rem;
