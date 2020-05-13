@@ -16,6 +16,9 @@
   align-items: center;
   justify-content: center;
 }
+.pdp-carousel-images-wrapper-content .carousel {
+  max-width: 100%;
+}
 .odo-carousel0images-offset {
   max-width: 674px !important;
   margin-right: 1px;
