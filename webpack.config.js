@@ -28,12 +28,5 @@ module.exports = {
   },
   resolve: {
     extensions: ['*', '.js', '.jsx'],
-  },
-  // pluggins: [
-  //   new webpack.HotModuleReplacementPlugin()
-  // ],
-  // devServer: {
-  //   contentBase: './client/dist',
-  //   hot: true
-  // }
+  }
 };
