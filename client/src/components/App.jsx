@@ -33,7 +33,7 @@ class App extends React.Component {
 
   getOneProduct() {
     axios
-      .get(`http://localhost:3000/${Math.floor(Math.random() * 100)}`, {
+      .get(`http://localhost:3000/${Math.floor(Math.random() * 100) + 1}`, {
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
