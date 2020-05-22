@@ -1,14 +1,34 @@
 const db = require('./index.js');
 
 module.exports = {
-  // getAll: (callback) => {
-  //   let queryStr = 'SELECT * FROM products';
-  //   db.query(queryStr, (err, results) => {
-  //     err ? callback(err) : callback(null, results);
-  //   });
-  // },
+  getAll: (callback) => {
+    let queryStr = 'SELECT * FROM products';
+    db.query(queryStr, (err, results) => {
+      err ? callback(err) : callback(null, results);
+    });
+  },
   getOne: (id, callback) => {
     let queryStr = `SELECT * FROM products WHERE id=${id};`;
+    db.query(queryStr, (err, results) => {
+      err ? callback(err) : callback(null, results);
+    });
+  },
+  deleteProduct: (id, callback) => {
+    let queryStr = `DELETE FROM products WHERE id=${id};`;
+    db.query(queryStr, (err, results) => {
+      err ? callback(err) : callback(null, results);
+    });
+  },
+  addProduct: (data, callback) => {
+    let {name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4} = data[0]
+    let queryStr = `INSERT INTO products (name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES('${name}', '${sex}', ${price}, ${reviews}, '${design}', '${fabric}', '${fit}', '${color1}', '${color2}', '${colorId1}', '${colorId2}', '${type}', '${img1}', '${img2}', '${img3}', '${img4}');`;
+    db.query(queryStr, (err, results) => {
+      err ? callback(err) : callback(null, results);
+    });
+  },
+  updateProduct: (id, data, callback) => {
+    let {name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4} = data[0]
+    let queryStr = `INSERT INTO products (name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES('${name}', '${sex}', ${price}, ${reviews}, '${design}', '${fabric}', '${fit}', '${color1}', '${color2}', '${colorId1}', '${colorId2}', '${type}', '${img1}', '${img2}', '${img3}', '${img4}');`;
     db.query(queryStr, (err, results) => {
       err ? callback(err) : callback(null, results);
     });
@@ -39,7 +59,7 @@ module.exports = {
     });
   },
   deleteCart: (callback) => {
-    let queryStr = 'TRUNCATE TABLE cart;';
+    let queryStr = 'TRUNCATE TABLE cart;'; // TRUNCATE = DROP
     db.query(queryStr, (err, results) => {
       err ? callback(err) : callback(null, results);
     });

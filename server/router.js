@@ -1,10 +1,10 @@
 const router = require('express').Router();
 const controller = require('./controller.js');
 
-// router
-//   .route('/')
-//   // gets all 100 product info
-//   .get(controller.getAll);
+router
+  .route('/all')
+  // gets all 100 product info
+  .get(controller.getAll);
   
 router
   .route('/cart')
@@ -18,7 +18,12 @@ router
 router
   .route('/:id')
   // gets one product info
-  .get(controller.getOne);
-  
+  .get(controller.getOne)
+  .delete(controller.deleteProduct)
+  .put(controller.updateProduct);
+
+router
+  .route('/create')
+  .post(controller.addProduct);
 
 module.exports = router;
