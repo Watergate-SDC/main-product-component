@@ -1,20 +1,18 @@
-// commented out when Database switched from MySQL to MongoDB
+// // const helper = require('../database/dbHelpers.js');
+// var mongoose = require('mongoose');
+// var connection = mongoose.connection;
+// var mongoUri = 'mongodb://localhost/SDC';
+// // Math.floor(Math.random() * 10000000)
+// const con = mongoose.connect(mongoUri, {
+//       useNewUrlParser: true,
+//       useUnifiedTopology: true,
+//     }, (err, db) => {
+//         if(err) {
+//             console.log(err)
+//             mongoose.connection.close()
+//         }
+//         console.log("MongoDB connected with 'SDC'!")
+//     })
 
-// const mysql = require('mysql');
-
-// const con = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'SDC'
-// });
-
-// con.connect((err) => {
-//   if (err) { 
-//     throw err;
-//   } else {
-//     console.log('Connected!');
-//   }
-// });
 
 // module.exports = con;

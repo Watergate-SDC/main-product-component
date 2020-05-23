@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon ./server/index.js",
     "build": "webpack -d --watch",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "seed-mongo-to-db": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop /database/data.csv"
   },
   "author": "Anna Dinh",
   "license": "ISC",

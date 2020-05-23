@@ -167,7 +167,7 @@ function writeTenMillionUsers(writer, encoding, callback) {
       id += 1;
       name = `${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]}`;
       sex = randomSex[Math.floor(Math.random() * 1)];
-      price = Math.floor( (25.99 + (Math.random() * 50) ) ) + 0.99;
+      price = Math.floor( (25.99 + (Math.random() * 50) ) );
       reviews = Math.floor(Math.random() * 15);
       design = randomDesign[Math.floor(Math.random() * randomDesign.length)];
       fabric = randomFabric[Math.floor(Math.random() * randomFabric.length)];
