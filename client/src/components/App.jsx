@@ -43,10 +43,10 @@ class App extends React.Component {
       })
       .then(item => {
         this.setState({
-          product: item.data,
+          product: item.data[0],
           currentColors: {
-            image1: item.data.img1,
-            image2: item.data.img2
+            image1: item.data[0].img1,
+            image2: item.data[0].img2
           },
         });
       })
