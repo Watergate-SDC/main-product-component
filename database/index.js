@@ -1,18 +1,20 @@
-const mysql = require('mysql');
+// commented out when Database switched from MySQL to MongoDB
 
-const con = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'SDC'
-});
+// const mysql = require('mysql');
 
-con.connect((err) => {
-  if (err) { 
-    throw err;
-  } else {
-    console.log('Connected!');
-  }
-});
+// const con = mysql.createConnection({
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'SDC'
+// });
 
-module.exports = con;
+// con.connect((err) => {
+//   if (err) { 
+//     throw err;
+//   } else {
+//     console.log('Connected!');
+//   }
+// });
+
+// module.exports = con;

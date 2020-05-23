@@ -136,6 +136,7 @@ let randomDesign = ['On the Move','Yoga and On the Move','Yoga','Training','Tenn
 let randomFabric = ['Soft Boolux Knit Fabric', 'Soft Cashlu Knit Fabric', 'Soft Cotton Fabric', 'Buttery-Soft Nulu Fabric', 'Smooth Luxtreme Fabric', 'Lightweight Swift Fabric']
 let randomFit = ['Relaxed Fit', 'Light Support A/B Cup', 'Medium Support B/C Cup', 'High Rise 4in Inseam', 'High Rise 2.5in Inseam', 'High Rise', 'Low Rise 2.5in Inseam', 'Tight Fit Cropped Length']
 let randomColors = ['Black', 'Dark Adobe', 'Vapor', 'Grey Sage', 'Cadet Blue', 'White', 'Cassis', 'Dark Olive', 'True Navy','Lunar Rock','Heathered Mod Stargaze','Graphite Grey']
+let randomColorId = ['https://lulupics.s3.us-east-2.amazonaws.com/Icons/Cadet+Blue.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Vapor.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Grey+Sage.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Navy.webp']
 let randomType = ['Sweaters','Sport Bras','Skirts','Shorts','Shirts','Hoodies and Sweatshirts','Coats and Jackets','Pants','Shirts',]
 let randomImg = [
   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
@@ -173,8 +174,8 @@ function writeTenMillionUsers(writer, encoding, callback) {
       fit = randomFit[Math.floor(Math.random() * randomFit.length)];
       color1 = randomColors[Math.floor(Math.random() * randomColors.length)];
       color2 = randomColors[Math.floor(Math.random() * randomColors.length)];
-      colorId1 = randomColors[Math.floor(Math.random() * randomColors.length)];
-      colorId2 = randomColors[Math.floor(Math.random() * randomColors.length)];
+      colorId1 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
+      colorId2 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
       type = randomType[Math.floor(Math.random() * randomType.length)];
       img1 = randomImg[Math.floor(Math.random() * randomImg.length)]; 
       img2 = randomImg[Math.floor(Math.random() * randomImg.length)];
