@@ -16,35 +16,35 @@ class App extends React.Component {
     };
     this.getOneProduct = this.getOneProduct.bind(this);
     this.handleNewColor = this.handleNewColor.bind(this);
-    this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
+    // this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
   }
 
   componentDidMount() {
     this.getOneProduct();
-    this.deleteCartUponRefresh();
+    // this.deleteCartUponRefresh();
   }
 
-  deleteCartUponRefresh() {
-    axios
-      .delete('http://localhost:3000/cart')
-      .catch(err => console.error(err));
-  }
+  // deleteCartUponRefresh() {
+  //   axios
+  //     .delete('http://localhost:3000/cart')
+  //     .catch(err => console.error(err));
+  // }
 
 
   getOneProduct() {
     axios
-      .get(`http://localhost:3000/${Math.floor(Math.random() * 100) + 1}`, {
+      .get(`http://localhost:3000/api/one`, {
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
         }
       })
-      .then((item) => {
+      .then(item => {
         this.setState({
-          product: item.data[0],
+          product: item.data,
           currentColors: {
-            image1: item.data[0].img1,
-            image2: item.data[0].img2
+            image1: item.data.img1,
+            image2: item.data.img2
           },
         });
       })

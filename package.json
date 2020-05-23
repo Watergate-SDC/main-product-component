@@ -25,7 +25,9 @@
     "react-dom": "^16.13.1",
     "fs": "0.0.1-security",
     "csv-write-stream": "2.0.0",
-    "faker": "4.1.0"
+    "faker": "4.1.0",
+    "mongoose": "5.9.15",
+    "mongodb": "3.5.7"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
