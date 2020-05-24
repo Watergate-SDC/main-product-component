@@ -7,6 +7,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      loaded: false,
       product: {},
       colorPicked: '',
       currentColors: {
@@ -19,9 +20,10 @@ class App extends React.Component {
     // this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.getOneProduct();
     // this.deleteCartUponRefresh();
+    // this.setState({product: initialLoad})
   }
 
   // deleteCartUponRefresh() {
@@ -41,14 +43,14 @@ class App extends React.Component {
       })
       .then(item => {
         this.setState({
-          product: item.data,
+          product: item.data[0],
           currentColors: {
-            image1: item.data.img1,
-            image2: item.data.img2
+            image1: item.data[0].img1,
+            image2: item.data[0].img2
           },
         });
       })
-      .catch(err => console.error(err));
+    .catch(err => console.error(err));
   }
 
   handleNewColor(color) {
@@ -70,8 +72,10 @@ class App extends React.Component {
   }
 
   render() {
+    const {loaded} = this.state
     return (
       <div className="wrapper container-fluid">
+        {
         <div className="row between-md pdp-components-wrapper animated fadeIn">
           <div className="col-md-6 col-lg-6 odo-carousel0images-offset ">
             <RenderImages currentColors={this.state.currentColors} />
@@ -80,6 +84,7 @@ class App extends React.Component {
             <RenderProductInfo product={this.state.product} currentColor={this.state.currentColor} handleNewColor={this.handleNewColor} firstcolor={this.state.currentColors.image1} />
           </div>
         </div>
+        }
       </div>
     );
   }

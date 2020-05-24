@@ -108,155 +108,76 @@ const data = [
   `('Cozy Calling Turtleneck', 'Womens', 148, 12, 'On the Move', 'Soft, Boolux Knit Fabric', 'Relaxed Fit', 'Graphite Grey', 'Black', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Graphite+Grey.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Black.webp', 'Sweaters', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+G1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+G1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+B1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+B2.webp')`
 ];
 
+// const fs = require('fs');
+// const csvWriter = require('csv-write-stream');
+// var writer = csvWriter();
+// var faker = require('faker');
+// var counter = 0;
+// let randomProductArr = ['Flxible', 'Tuck', 'Long', 'Woven', '2.5in', 'Sweater', 'Back to Balance', 'Under Crop', 'Motivation Short Sleeve', 'Surge Warm', 'Warp Lite']
+// let randomSex = ['Mens', 'Womens']
+// let randomDesign = ['On the Move','Yoga and On the Move','Yoga','Training','Tennis','Running']
+// let randomFabric = ['Soft Boolux Knit Fabric', 'Soft Cashlu Knit Fabric', 'Soft Cotton Fabric', 'Buttery-Soft Nulu Fabric', 'Smooth Luxtreme Fabric', 'Lightweight Swift Fabric']
+// let randomFit = ['Relaxed Fit', 'Light Support A/B Cup', 'Medium Support B/C Cup', 'High Rise 4in Inseam', 'High Rise 2.5in Inseam', 'High Rise', 'Low Rise 2.5in Inseam', 'Tight Fit Cropped Length']
+// let randomColors = ['Black', 'Dark Adobe', 'Vapor', 'Grey Sage', 'Cadet Blue', 'White', 'Cassis', 'Dark Olive', 'True Navy','Lunar Rock','Heathered Mod Stargaze','Graphite Grey']
+// let randomColorId = ['https://lulupics.s3.us-east-2.amazonaws.com/Icons/Cadet+Blue.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Vapor.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Grey+Sage.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Navy.webp']
+// let randomType = ['Sweaters','Sport Bras','Skirts','Shorts','Shirts','Hoodies and Sweatshirts','Coats and Jackets','Pants','Shirts',]
+// let randomImg = [
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Wunder+Train+High-Rise+Tight+25%22+Black+2.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Free+To+Be+Serene+Bra+Long+Line+C1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Fast+and+Free+Crop+II+19%22+Non-Reflective+Cassis+2.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Align+Pant+II+25%22+Camo+1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Wunder+Under+Crop+(High-Rise)+Navy+1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Fast+and+Free+Crop+II+19%22+Non-Reflective+Camo+1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Align+Crop+21+Camo+2.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Pulse+Motivation+Short+Sleeve+Vapor+2.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Metal+Vent+Tech+Sleeveless+2.0+Tempest+1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Metal+Vent+Tech+Long+Sleeve+2.0+Black+2.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/hoodies+and+sweatshirts/Define+Jacket+N1.webp',
+//   'https://lulupics.s3.us-east-2.amazonaws.com/Womens/hoodies+and+sweatshirts/Always+Effortless+Jacket+B1.webp'
+//               ]
+// const writeDataCSV = fs.createWriteStream('data.csv');
+// writeDataCSV.write('id,name,sex,price,reviews,design,fabric,fit,color1,color2,colorId1,colorId2,type,img1,img2,img3,img4\n');
 
+// function writeTenMillionUsers(writer, encoding, callback) {
+//   let i = 10000000;
+//   let id = 0;
 
-// const queryDb = (mockData) => {
-//   mockData.map((product) => {
-//     let queryStr = `INSERT INTO products (name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES ${product}`;
-//     db.query(queryStr, (err, results) => {
-//       if (err) {
-//         console.error(err);
+//   function write() {
+//     let ok = true;
+//     do {
+//       i -= 1;
+//       id += 1;
+//       name = `${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]}`;
+//       sex = randomSex[Math.floor(Math.random() * 1)];
+//       price = Math.floor( (25.99 + (Math.random() * 50) ) );
+//       reviews = Math.floor(Math.random() * 15);
+//       design = randomDesign[Math.floor(Math.random() * randomDesign.length)];
+//       fabric = randomFabric[Math.floor(Math.random() * randomFabric.length)];
+//       fit = randomFit[Math.floor(Math.random() * randomFit.length)];
+//       color1 = randomColors[Math.floor(Math.random() * randomColors.length)];
+//       color2 = randomColors[Math.floor(Math.random() * randomColors.length)];
+//       colorId1 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
+//       colorId2 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
+//       type = randomType[Math.floor(Math.random() * randomType.length)];
+//       img1 = randomImg[Math.floor(Math.random() * randomImg.length)]; 
+//       img2 = randomImg[Math.floor(Math.random() * randomImg.length)];
+//       img3 = randomImg[Math.floor(Math.random() * randomImg.length)];
+//       img4 = randomImg[Math.floor(Math.random() * randomImg.length)];
+//       const data = `${id},${name},${sex},${price},${reviews},${design},${fabric},${fit},${color1},${color2},${colorId1},${colorId2},${type},${img1},${img2},${img3},${img4}\n`;
+//       if (i === 0) {
+//         writer.write(data, encoding, callback);
 //       } else {
-//         console.log('Product seeded!');
+//         ok = writer.write(data, encoding);
 //       }
-//     });
-//   });
-// };
-
-// queryDb(data);
-
-const fs = require('fs');
-const csvWriter = require('csv-write-stream');
-var writer = csvWriter();
-var faker = require('faker');
-var counter = 0;
-let randomProductArr = ['Flxible', 'Tuck', 'Long', 'Woven', '2.5in', 'Sweater', 'Back to Balance', 'Under Crop', 'Motivation Short Sleeve', 'Surge Warm', 'Warp Lite']
-let randomSex = ['Mens', 'Womens']
-let randomDesign = ['On the Move','Yoga and On the Move','Yoga','Training','Tennis','Running']
-let randomFabric = ['Soft Boolux Knit Fabric', 'Soft Cashlu Knit Fabric', 'Soft Cotton Fabric', 'Buttery-Soft Nulu Fabric', 'Smooth Luxtreme Fabric', 'Lightweight Swift Fabric']
-let randomFit = ['Relaxed Fit', 'Light Support A/B Cup', 'Medium Support B/C Cup', 'High Rise 4in Inseam', 'High Rise 2.5in Inseam', 'High Rise', 'Low Rise 2.5in Inseam', 'Tight Fit Cropped Length']
-let randomColors = ['Black', 'Dark Adobe', 'Vapor', 'Grey Sage', 'Cadet Blue', 'White', 'Cassis', 'Dark Olive', 'True Navy','Lunar Rock','Heathered Mod Stargaze','Graphite Grey']
-let randomColorId = ['https://lulupics.s3.us-east-2.amazonaws.com/Icons/Cadet+Blue.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Vapor.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Grey+Sage.webp','https://lulupics.s3.us-east-2.amazonaws.com/Icons/Navy.webp']
-let randomType = ['Sweaters','Sport Bras','Skirts','Shorts','Shirts','Hoodies and Sweatshirts','Coats and Jackets','Pants','Shirts',]
-let randomImg = [
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Wunder+Train+High-Rise+Tight+25%22+Black+2.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Free+To+Be+Serene+Bra+Long+Line+C1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Fast+and+Free+Crop+II+19%22+Non-Reflective+Cassis+2.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Align+Pant+II+25%22+Camo+1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Wunder+Under+Crop+(High-Rise)+Navy+1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Fast+and+Free+Crop+II+19%22+Non-Reflective+Camo+1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/Pants/Align+Crop+21+Camo+2.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Pulse+Motivation+Short+Sleeve+Vapor+2.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Metal+Vent+Tech+Sleeveless+2.0+Tempest+1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Polos/Metal+Vent+Tech+Long+Sleeve+2.0+Black+2.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/hoodies+and+sweatshirts/Define+Jacket+N1.webp',
-  'https://lulupics.s3.us-east-2.amazonaws.com/Womens/hoodies+and+sweatshirts/Always+Effortless+Jacket+B1.webp'
-              ]
-const writeDataCSV = fs.createWriteStream('data.csv');
-writeDataCSV.write('id,name,sex,price,reviews,design,fabric,fit,color1,color2,colorId1,colorId2,type,img1,img2,img3,img4\n');
-
-function writeTenMillionUsers(writer, encoding, callback) {
-  let i = 10000000;
-  let id = 0;
-
-  function write() {
-    let ok = true;
-    do {
-      i -= 1;
-      id += 1;
-      name = `${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]} ${randomProductArr[Math.floor(Math.random() * randomProductArr.length)]}`;
-      sex = randomSex[Math.floor(Math.random() * 1)];
-      price = Math.floor( (25.99 + (Math.random() * 50) ) ) + 0.99;
-      reviews = Math.floor(Math.random() * 15);
-      design = randomDesign[Math.floor(Math.random() * randomDesign.length)];
-      fabric = randomFabric[Math.floor(Math.random() * randomFabric.length)];
-      fit = randomFit[Math.floor(Math.random() * randomFit.length)];
-      color1 = randomColors[Math.floor(Math.random() * randomColors.length)];
-      color2 = randomColors[Math.floor(Math.random() * randomColors.length)];
-      colorId1 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
-      colorId2 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
-      type = randomType[Math.floor(Math.random() * randomType.length)];
-      img1 = randomImg[Math.floor(Math.random() * randomImg.length)]; 
-      img2 = randomImg[Math.floor(Math.random() * randomImg.length)];
-      img3 = randomImg[Math.floor(Math.random() * randomImg.length)];
-      img4 = randomImg[Math.floor(Math.random() * randomImg.length)];
-      const data = `${id},${name},${sex},${price},${reviews},${design},${fabric},${fit},${color1},${color2},${colorId1},${colorId2},${type},${img1},${img2},${img3},${img4}\n`;
-      if (i === 0) {
-        writer.write(data, encoding, callback);
-      } else {
-        ok = writer.write(data, encoding);
-      }
-    } while (i > 0 && ok);
-    if (i > 0) {
-      writer.once('drain', write);
-    }
-  }
-write()
-}
-
-writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
-  writeDataCSV.end();
-});
-
-// async const dataGen = () => {
-//   writer.pipe(fs.createWriteStream('data.csv'));
-//   for (let i = 0; i < 10000000; i++) {
-//     writer.write({
-//       id: counter++,
-//       name: faker.commerce.productName(),
-//       sex: randomSex[Math.round(Math.random() * 1)],
-//       price: Math.round( (25.99 + (Math.random() * 50) ) ) + 0.99,
-//       reviews: Math.round(Math.random() * 15),
-//       design: randomDesign[Math.round(Math.random() * randomDesign.length)],
-//       fabric: randomFabric[Math.round(Math.random() * randomFabric.length)],
-//       fit: randomFit[Math.round(Math.random() * randomFit.length)],
-//       color1: randomColors[Math.round(Math.random() * randomColors.length)],
-//       color2: randomColors[Math.round(Math.random() * randomColors.length)],
-//       colorId1: randomColors[Math.round(Math.random() * randomColors.length)],
-//       colorId2: randomColors[Math.round(Math.random() * randomColors.length)],
-//       type: randomType[Math.round(Math.random() * randomType.length)],
-//       img1: 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp', 
-//       img2: 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
-//       img3: 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
-//       img4: 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Play+Off+The+Pleats+Skirt+B1.webp',
-//     })
-//   }
-
-//   await writer.end();
-//   await console.log('done with 10mil');
-// }
-
-// dataGen();
-
-// const mongoose = require('mongoose');
-// const Schema = mongoose.Schema;
-// var seeder = require('mongoose-seed');
-// require('./schema.js');
-// const db = 'mongodb://mongo:27018/SDC';
-
-
-// let Product = mongoose.model('Product', productSchema); // mongoose product model
-
-// module.exports = Product;
-
-
-
-
-// let scrapeImg = (data) => {
-//   let output = []
-//   for (let i = 0; i < data.length; i++) {
-//     let split = data[i].split(',')
-    
-//     for (let j = 0; j < split.length; j++) {
-
-//       if (split[j].includes('https://lulupics.s3.us-east-2.amazonaws.com/Womens/')) {
-//         output.push(split[j])
-//       }
+//     } while (i > 0 && ok);
+//     if (i > 0) {
+//       writer.once('drain', write);
 //     }
 //   }
-//   return output
+// write()
 // }
 
-// let randomImage = scrapeImg(data)
-
+// writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
+//   writeDataCSV.end();
+// });

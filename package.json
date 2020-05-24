@@ -6,7 +6,8 @@
   "scripts": {
     "start": "nodemon ./server/index.js",
     "build": "webpack -d --watch",
-    "seed": "node database/seed.js"
+    "seed": "node database/seed.js",
+    "seed-mongo-to-db": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop /database/data.csv"
   },
   "author": "Anna Dinh",
   "license": "ISC",
@@ -27,7 +28,8 @@
     "csv-write-stream": "2.0.0",
     "faker": "4.1.0",
     "mongoose": "5.9.15",
-    "mongodb": "3.5.7"
+    "mongodb": "3.5.7",
+    "artillery": "1.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

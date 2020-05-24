@@ -4,6 +4,23 @@ const morgan = require('morgan');
 const cors = require('cors');
 const router = require('./router.js');
 const path = require('path');
+// database connection -- set to open connection pool on npm start
+var mongoose = require('mongoose');
+var connection = mongoose.connection;
+var mongoUri = 'mongodb://localhost/SDC';
+
+mongoose.connect(mongoUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+  }, (err, db) => {
+    if(err){
+      console.log(err)
+      mongoose.connection.close()
+    }
+    app.locals.db = db; // storing db pool into express's locals db property
+    console.log("MongoDB connected with 'SDC'!")
+  }
+)
 
 const port = 3000;
 const app = express();
