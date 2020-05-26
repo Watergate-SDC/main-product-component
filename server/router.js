@@ -5,12 +5,12 @@ router
   .route('/one')
   .get(controller.getOne);
   
-// router
-//   .route('/cart')
-//   // gets subtotal of cart
-//   .get(controller.getCartInfo)
-//   // adds a product to cart
-//   .post(controller.addToCart)
+router
+  .route('/cart')
+  // gets subtotal of cart
+  .get(controller.getCartInfo)
+  // adds a product to cart
+  .post(controller.addToCart)
 //   // deletes entire cart
 //   .delete(controller.deleteCart);
 

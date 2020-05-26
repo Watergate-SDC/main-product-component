@@ -1,5 +1,5 @@
-// const mongoose = require('mongoose');
-// const Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 // var connection = mongoose.connection;
 // var mongoUri = 'mongodb://localhost/SDC';
 // mongoose.connect(mongoUri, {
@@ -40,15 +40,15 @@
 
 // let luluProducts = mongoose.model('luluProducts', productSchema);
 
-// let cartSchema = new Schema({
-//     id: {type: Number},
-//     price: {type: Number}
-// })
+let cartSchema = new Schema({
+    id: {type: Number},
+    price: {type: Number}
+})
 
-// let Cart = mongoose.model('Cart', cartSchema);
-// // module.exports = {
-// //     luluProducts: luluProducts,
-// //     Cart: Cart
-// // }
+let Cart = mongoose.model('Cart', cartSchema);
+// module.exports = {
+//     luluProducts: luluProducts,
+//     Cart: Cart
+// }
 
-// module.exports = luluProducts;
+module.exports = Cart;

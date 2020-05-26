@@ -1,10 +1,3 @@
-// // const db = require('./index.js');
-
-
-// const getRandomNum = () => {
-//   return Math.floor(Math.random() * 100);
-// };
-
 const data = [
   `('ABC Jogger', 'Mens', 128, 12, 'Anti Ball Crushing', 'Four Way Stretch Warpstreme Fabric', 'Baggy', 'True Navy', 'Dark Olive', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Navy.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Dark+Olive.webp', 'Pants', 'https://lulupics.s3.us-east-2.amazonaws.com/ABC+Jogger+Navy+2.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/ABC+Jogger+Navy.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/ABC+Jogger+Olive+Green+1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/ABC+Jogger+Olive+Green+2.webp')`,
   `('City Sweat Jogger', 'Mens', 118, 12, 'On the Move', 'Soft, Stretch French Terry Fabric', 'Relaxed Fit', 'Heather Allover Sea Salt Light Cast', 'Black', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Heather+Allover+Sea+Salt+Light+Cast.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Black.webp', 'Pants', 'https://lulupics.s3.us-east-2.amazonaws.com/City+Sweat+Jogger+Light+Grey+1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/City+Sweat+Jogger+Light+Grey+2.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/City+Sweat+Jogger+Black+1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/City+Sweat+Jogger+Black+2.webp')`,
@@ -107,6 +100,60 @@ const data = [
   `('Back to Balance Long Sleeve Sweater', 'Womens', 128, 12, 'On the Move', 'Soft, Cashlu Knit Fabric', 'Relaxed Fit', 'Vapor', 'Grey Sage', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Vapor.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Grey+Sage.webp', 'Sweaters', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Back+to+Balance+Long+Sleeve+Sweater+V1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Back+to+Balance+Long+Sleeve+Sweater+V2.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Back+to+Balance+Long+Sleeve+Sweater+G1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Back+to+Balance+Long+Sleeve+Sweater+G2.webp')`,
   `('Cozy Calling Turtleneck', 'Womens', 148, 12, 'On the Move', 'Soft, Boolux Knit Fabric', 'Relaxed Fit', 'Graphite Grey', 'Black', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Graphite+Grey.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Black.webp', 'Sweaters', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+G1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+G1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+B1.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Womens/shirts/Cozy+Calling+Turtleneck+B2.webp')`
 ];
+
+
+const fs = require('fs');
+const csvWriter = require('csv-write-stream');
+var writer = csvWriter();
+var faker = require('faker');
+var counter = 0;
+
+const writeDataCSV = fs.createWriteStream('10MilData.csv');
+writeDataCSV.write('id,name,sex,price,reviews,design,fabric,fit,color1,color2,colorId1,colorId2,type,img1,img2,img3,img4\n');
+
+function writeTenMillionUsers(writer, encoding, callback) {
+  let i = 10000000;
+  let id = 0;
+  let randomSex = ['Mens', 'Womens']
+  let randomColorId = ['https://lulupics.s3.us-east-2.amazonaws.com/Icons/Cadet+Blue.webp', 'https://lulupics.s3.us-east-2.amazonaws.com/Icons/Vapor.webp']
+  function write() {
+    let ok = true;
+    do {
+      i -= 1;
+      id += 1;
+      name = faker.commerce.productName()
+      sex = randomSex[Math.floor(Math.random() * 1)];
+      price = faker.commerce.price();
+      reviews = Math.floor(Math.random() * 15);
+      design = faker.commerce.product();
+      fabric = faker.commerce.productMaterial();
+      fit = faker.commerce.product();
+      color1 = faker.commerce.color();
+      color2 = faker.commerce.color();
+      colorId1 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
+      colorId2 = randomColorId[Math.floor(Math.random() * randomColorId.length)];
+      type = faker.commerce.product();
+      img1 = faker.image.cats();
+      img2 = faker.image.cats();
+      img3 = faker.image.cats();
+      img4 = faker.image.cats();
+      const data = `${id},${name},${sex},${price},${reviews},${design},${fabric},${fit},${color1},${color2},${colorId1},${colorId2},${type},${img1},${img2},${img3},${img4}\n`;
+      if (i === 0) {
+        writer.write(data, encoding, callback);
+      } else {
+        ok = writer.write(data, encoding);
+      }
+    } while (i > 0 && ok);
+    if (i > 0) {
+      writer.once('drain', write);
+    }
+  }
+write()
+}
+
+writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
+  writeDataCSV.end();
+});
 
 // const fs = require('fs');
 // const csvWriter = require('csv-write-stream');

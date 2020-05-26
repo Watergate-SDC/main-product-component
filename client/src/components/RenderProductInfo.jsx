@@ -116,7 +116,11 @@ class RenderProductInfo extends React.Component {
               Size guide
             </a>
           </div>
-          <AddToBag firstcolor={this.props.firstcolor} currentColor={this.state.currentColor === undefined ? this.props.product.color1 : this.state.currentColor} currentSize={this.state.currentSize} product={this.props.product} />
+          <AddToBag 
+          firstcolor={this.props.firstcolor}
+          currentColor={this.state.currentColor === undefined ? this.props.product.color1 : this.state.currentColor} 
+          currentSize={this.state.currentSize} 
+          product={this.props.product} />
           <div className='customer-engagement-extensions'>
             <button type='button' className='customer-engagement-extensions__button'>
               <svg width='24px' height='24px' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' className='icon reviews-icon' focusable='false'>
