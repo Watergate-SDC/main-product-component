@@ -7,7 +7,9 @@
     "start": "nodemon ./server/index.js",
     "build": "webpack -d --watch",
     "createCSV": "node database/seed.js",
-    "seed-csv-to-mongodb": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop 10MilData.csv"
+    "seed-csv-to-mongodb": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop 10MilData.csv",
+    "artillery-products": "artillery run getProduct.yml",
+    "artillery-cart": "artillery run getCart.yml"
   },
   "author": "Anna Dinh",
   "license": "ISC",
