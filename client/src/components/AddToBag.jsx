@@ -17,10 +17,10 @@ class AddToBag extends React.Component {
 
   addToCart() {
     Axios
-      .post('http://localhost:3000/cart', { price: this.props.product.price })
+      .post('http://localhost:3000/api/cart', { price: this.props.product.price })
       .then(() => {
         Axios
-          .get('http://localhost:3000/cart')
+          .get('http://localhost:3000/api/cart')
           .then((cartInfo) => {
             this.setState({
               totalItems: cartInfo.data.totalItems,
