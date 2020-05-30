@@ -1,61 +1,81 @@
-const Cart = require('../database/schema.js')
+// const Cart = require('../database/schema.js')
+const Pool = require('pg').Pool
+const pool = new Pool({
+  user: '',
+  host: 'localhost',
+  database: 'SDC',
+  password: '',
+  port: 5432,
+}) 
 
+let id = Math.floor(Math.random() * 1000000) + 9000000; // generates id number within last 10% of database
+let currentId = 10000001;
 
 const controller = {
   getOne:(req, res) => {
-      let db = req.app.locals.db;
-      let rando = Math.floor(Math.random() * 10000000) // variable to use to test between 1 - 10,000,000
-      let id = Math.floor(Math.random() * 1000000) + 9000000 // generates id number within last 10% of database
-    db.collection("luluProducts").find({id: id}).sort({id: -1}).toArray()
-      .then(data => {
-        console.log(`querying for id: ${id}`)
-        // console.log(`querying for id: ${rando}`)
-        res.status(200).send(data)
+    let queryString = `SELECT * FROM products WHERE id = ${id} ORDER BY id DESC;`
+    pool.query(queryString, (err, results) => {
+      console.log(`querying for id: ${id}`)
+        if (err) {
+          res.status(400).send(err)
+        }
+          res.status(200).send(results.rows)
       })
-      .catch(err => res.status(400).send(err))
     },
-
   addToCart: (req, res) => {
-      let {price} = req.body
-      Cart.create({price: price})
-      .then(data =>
-      res.status(200).send(data)
-      )
-      .catch(err => res.status(400).send(err))
-    },
+    let {price} = req.body
+    let queryString = `INSERT INTO cart (price) VALUES (${price});`
 
-  getCartInfo: (req, res) => {
-      Cart.find({})
-      .then(results => {
+    pool.query(queryString, (err, results) => {
+      if (err) {
+        res.status(400).send(err)
+      }
+      res.status(201).send(results.rows)
+    })
+  },
+    getCartInfo: (req, res) => {
+      let queryString = `SELECT * FROM cart;`
+      pool.query(queryString, (err, results) => {
+      if (err) {
+        res.status(400).send(err)
+      }
 
-        let information = {
-          subtotal: 0,
-          totalItems: 0
-        };
+      let information = {
+        subtotal: 0,
+        totalItems: 0
+      };
 
-        for (let i = 0; i < results.length; i++) {
-          information.subtotal += results[i].price;
-          information.totalItems += 1;
-        };
+      for (let i = 0; i < results.rows.length; i++) {
+        information.subtotal += results.rows[i].price;
+        information.totalItems += 1;
+      };
         res.status(200).send(information)
+    })
+  },
+  deleteCart: (req, res) => {
+    let queryString = `TRUNCATE TABLE cart;`
+    pool.query(queryString, (err, results) => {
+        if (err) {
+          res.status(400).send(err)
+        }
+          res.status(200).send("Cleared Cart Table")
       })
-      .catch(err => res.status(400).send(err))
-    }
-};
+  }
+}  
 
 module.exports = controller;
 
-// module.exports = {
-//   addToCart: (price, callback) => {
-//     let queryStr = `INSERT INTO cart (price) VALUES (${price});`;
-//     db.query(queryStr, (err, results) => {
-//       err ? callback(err) : callback(null, results);
-//     });
-//   },
-//   deleteCart: (callback) => {
-//     let queryStr = 'TRUNCATE TABLE cart;';
-//     db.query(queryStr, (err, results) => {
-//       err ? callback(err) : callback(null, results);
-//     });
-//   }
-// };
+
+  // addProduct: (req, res) => {
+  //   let {name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4} = req.body
+  //   let data = [currentId, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4]
+  //   // let queryString = `INSERT INTO products(id, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES (${currentId},${name},${sex}, ${price}, ${reviews},'${design}','${fabric}','${fit}','${color1}','${color2}','${colorId1}','${colorId2}','${type}','${img1}','${img2}','${img3}','${img4}');`
+  //   let queryString = `INSERT INTO products(id, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES ();`
+  //   pool.query(queryString, data, (err, results) => {
+  //       if (err) {
+  //         res.status(400).send(err)
+  //       }
+  //         currentId+=1
+  //         res.status(200).send(results)
+  //     })
+  // }

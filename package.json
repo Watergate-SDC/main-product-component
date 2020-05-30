@@ -6,32 +6,37 @@
   "scripts": {
     "start": "nodemon ./server/index.js",
     "build": "webpack -d --watch",
+    "prod-build": "webpack --mode production",
     "createCSV": "node database/seed.js",
     "seed-csv-to-mongodb": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop 10MilData.csv",
     "artillery-products": "artillery run getProduct.yml",
-    "artillery-cart": "artillery run getCart.yml"
+    "artillery-cart": "artillery run getCart.yml",
+    "test": "jest"
   },
   "author": "Anna Dinh",
   "license": "ISC",
   "dependencies": {
+    "artillery": "1.6.0",
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
+    "csv-write-stream": "2.0.0",
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "express": "^4.17.1",
+    "faker": "4.1.0",
+    "fs": "0.0.1-security",
     "morgan": "^1.10.0",
-    "mysql": "^2.18.1",
+    "newrelic": "^6.8.0",
     "nodemon": "^2.0.3",
+    "pg": "8.2.1",
+    "postgre-sql": "1.18.0",
     "react": "^16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "^16.13.1",
-    "fs": "0.0.1-security",
-    "csv-write-stream": "2.0.0",
-    "faker": "4.1.0",
-    "mongoose": "5.9.15",
-    "mongodb": "3.5.7",
-    "artillery": "1.6.0"
+    "jquery": "3.5.1",
+    "popper.js": "1.16.1",
+    "supertest": "4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -39,6 +44,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
+    "jest": "^26.0.1",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
