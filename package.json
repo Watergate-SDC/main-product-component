@@ -4,11 +4,11 @@
   "description": "a clone of Lululemon product viewer module for educational purposes",
   "main": "./server/index.js",
   "scripts": {
+    "start-main": "nodemon ./server/index.js && webpack -d --watch",
     "start": "nodemon ./server/index.js",
     "build": "webpack -d --watch",
     "prod-build": "webpack --mode production",
     "createCSV": "node database/seed.js",
-    "seed-csv-to-mongodb": "mongoimport --type csv -d SDC -c luluProducts --headerline --drop 10MilData.csv",
     "artillery-products": "artillery run getProduct.yml",
     "artillery-cart": "artillery run getCart.yml",
     "test": "jest"

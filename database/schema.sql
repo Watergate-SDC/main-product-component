@@ -1,28 +1,31 @@
--- DROP DATABASE IF EXISTS lululemon;
--- CREATE DATABASE lululemon;
--- USE lululemon;
+DROP DATABASE SDC IF EXISTS;
 
--- CREATE TABLE products (
---   id INT AUTO_INCREMENT PRIMARY KEY,
---   name VARCHAR(255) NOT NULL,
---   sex VARCHAR(10) NOT NULL,
---   price INT NOT NULL, 
---   reviews INT(10) NOT NULL,
---   design VARCHAR(80) NOT NULL,
---   fabric VARCHAR(80) NOT NULL,
---   fit VARCHAR(80) NOT NULL,
---   color1 VARCHAR(80) NOT NULL, 
---   color2 VARCHAR(80) NOT NULL,
---   colorId1 VARCHAR(255) NOT NULL,
---   colorId2 VARCHAR(255) NOT NULL,
---   type VARCHAR(55) NOT NULL,
---   img1 VARCHAR(255) NOT NULL,
---   img2 VARCHAR(255) NOT NULL,
---   img3 VARCHAR(255) NOT NULL,
---   img4 VARCHAR(255) NOT NULL
--- );
+CREATE DATABASE SDC;
 
--- CREATE TABLE cart (
---   id INT AUTO_INCREMENT PRIMARY KEY,
---   price INT NOT NULL
--- );
+
+CREATE TABLE products (
+id integer,
+name text,
+sex text,
+price integer,
+reviews integer,
+design text,
+fabric text,
+fit text,
+color1 text,
+color2 text,
+colorId1 text,
+colorId2 text,
+type text,
+img1 text,
+img2 text,
+img3 text,
+img4 text
+);
+
+CREATE INDEX id_index ON products (id);
+
+CREATE TABLE cart (
+  id integer,
+  price integer
+);

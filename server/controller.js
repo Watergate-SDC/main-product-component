@@ -69,7 +69,7 @@ module.exports = controller;
   // addProduct: (req, res) => {
   //   let {name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4} = req.body
   //   let data = [currentId, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4]
-  //   // let queryString = `INSERT INTO products(id, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES (${currentId},${name},${sex}, ${price}, ${reviews},'${design}','${fabric}','${fit}','${color1}','${color2}','${colorId1}','${colorId2}','${type}','${img1}','${img2}','${img3}','${img4}');`
+  //   // let queryString = `INSERT INTO products(1, 'name', 'sex', 1, 1, 'design', 'fabric', 'fit', 'color1', 'color2', 'colorId1', 'colorId2', 'type', 'img1', 'img2', 'img3', 'img4') VALUES (${currentId},${name},${sex}, ${price}, ${reviews},'${design}','${fabric}','${fit}','${color1}','${color2}','${colorId1}','${colorId2}','${type}','${img1}','${img2}','${img3}','${img4}');`
   //   let queryString = `INSERT INTO products(id, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES ();`
   //   pool.query(queryString, data, (err, results) => {
   //       if (err) {
@@ -79,3 +79,5 @@ module.exports = controller;
   //         res.status(200).send(results)
   //     })
   // }
+
+  // INSERT INTO products(id, name, sex, price, reviews, design, fabric, fit, color1, color2, colorId1, colorId2, type, img1, img2, img3, img4) VALUES (1, 'name', 'sex', 1, 1, 'design', 'fabric', 'fit', 'color1', 'color2', 'colorId1', 'colorId2', 'type', 'img1', 'img2', 'img3', 'img4');

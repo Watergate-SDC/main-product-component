@@ -248,3 +248,8 @@ writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
 // img2 text,
 // img3 text,
 // img4 text);
+
+// CREATE TABLE cart (
+//   id integer,
+//   price integer
+// );

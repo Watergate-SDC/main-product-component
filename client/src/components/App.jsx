@@ -28,14 +28,14 @@ class App extends React.Component {
 
   deleteCartUponRefresh() {
     axios
-      .delete('http://localhost:3000/api/cart')
+      .delete('/api/delete')
       .catch(err => console.error(err));
   }
 
 
   getOneProduct() {
     axios
-      .get(`http://localhost:3000/api/one`, {
+      .get(`/api/one`, {
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'
