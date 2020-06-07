@@ -17,25 +17,25 @@ class App extends React.Component {
     };
     this.getOneProduct = this.getOneProduct.bind(this);
     this.handleNewColor = this.handleNewColor.bind(this);
-    // this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
+    this.deleteCartUponRefresh = this.deleteCartUponRefresh.bind(this);
   }
 
   componentWillMount() {
     this.getOneProduct();
-    // this.deleteCartUponRefresh();
+    this.deleteCartUponRefresh();
     // this.setState({product: initialLoad})
   }
 
-  // deleteCartUponRefresh() {
-  //   axios
-  //     .delete('http://localhost:3000/cart')
-  //     .catch(err => console.error(err));
-  // }
+  deleteCartUponRefresh() {
+    axios
+      .delete('/api/delete')
+      .catch(err => console.error(err));
+  }
 
 
   getOneProduct() {
     axios
-      .get(`http://localhost:3000/api/one`, {
+      .get(`/api/one`, {
         headers: {
           'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json'

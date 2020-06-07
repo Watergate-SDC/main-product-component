@@ -123,7 +123,7 @@ function writeTenMillionUsers(writer, encoding, callback) {
       id += 1;
       name = faker.commerce.productName()
       sex = randomSex[Math.floor(Math.random() * 1)];
-      price = faker.commerce.price();
+      price = Math.floor(Math.random() * 20) + 35;
       reviews = Math.floor(Math.random() * 15);
       design = faker.commerce.product();
       fabric = faker.commerce.productMaterial();
@@ -228,3 +228,28 @@ writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
 // writeTenMillionUsers(writeDataCSV, 'utf-8', () => {
 //   writeDataCSV.end();
 // });
+
+
+// CREATE TABLE products (
+// id integer,
+// name text,
+// sex text,
+// price integer,
+// reviews integer,
+// design text,
+// fabric text,
+// fit text,
+// color1 text,
+// color2 text,
+// colorId1 text,
+// colorId2 text,
+// type text,
+// img1 text,
+// img2 text,
+// img3 text,
+// img4 text);
+
+// CREATE TABLE cart (
+//   id integer,
+//   price integer
+// );

@@ -11,8 +11,8 @@ router
   .get(controller.getCartInfo)
   // adds a product to cart
   .post(controller.addToCart)
-//   // deletes entire cart
-//   .delete(controller.deleteCart);
+  // deletes entire cart
+  .delete(controller.deleteCart);
 
 // router
 //   .route('/:id')

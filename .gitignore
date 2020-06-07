@@ -9,3 +9,8 @@ client/dist/bundle.js
 node_modules
 
 10MilData.csv
+newrelic.js
+newrelic_agent.log
+SDCServiceCode.pem
+SDC-Database.Instance.pem
+NGINX_Key.pem
