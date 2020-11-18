@@ -18,5 +18,7 @@ See below:
 - Misc: Nginx, AWS EC2, K9, Jest, Enzyme
 
 ## Some of the optimization done: 
+- Compare two popular databases: MongoDB and PostgreSQL to gauge effectiveness on large data.
 - Routing traffic with least-connected load-balancing strategy.
 - Indexed database records to DRASTICALLY reduce query times, even for last 10% database records.
+- Automated testing steps with unit tests, reducing redundancy and improving development efficiency.
