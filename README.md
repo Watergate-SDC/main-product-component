@@ -1,4 +1,4 @@
-# Lululemon Systems Design Stress Test/Optimization?
+# Lululemon Systems Design Stress Test/Optimization
 
 ## Welcome to Lululemon Systems Design! 
 
